@@ -1,0 +1,1712 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PE_PROJECT_SETTINGS_DOCUMENTATION>
+  <PE_product_version v="version 10.5 for Freescale Microcontrollers" />
+  <PE_core_version v="Processor Expert Version 0521" />
+  <CPU_Bean name="Cpu" type="MKL46Z256LL4">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Cpu" />
+      <CPU_type v="MKL46Z256VLL4" />
+      <Initialization_priority v="interrupts enabled" />
+      <Watchdog_disable v="yes" />
+      <group name="Internal peripherals">
+        <EmptySection_DummyValue />
+      </group>
+      <group name="Low power mode settings">
+        <EmptySection_DummyValue />
+      </group>
+      <list name="Clock configurations" v="5">
+        <group name="Clock configuration 0">
+          <boolgroup name="Very low power mode" v="Disabled" />
+          <enumgroup name="Clock source setting" v="configuration 0">
+            <MCG_mode v="FEI" />
+            <MCG_output__MHz_ v="20.971520000000" />
+            <MCGIRCLK_clock__MHz_ v="0.032768" />
+            <OSCERCLK_clock__MHz_ v="8" />
+            <ERCLK32K__clock__MHz_ v="0.001" />
+            <MCGFFCLK__kHz_ v="32.768" />
+          </enumgroup>
+          <group name="System clocks">
+            <Core_clock_prescaler v="Auto select" />
+            <Core_clock v="20.971520000000" />
+            <Bus_clock_prescaler v="Auto select" />
+            <Bus_clock v="20.971520000000" />
+            <enumgroup name="PLL/FLL clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="20.971520000000" />
+            </enumgroup>
+            <enumgroup name="TPM clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="20.971520000000" />
+            </enumgroup>
+          </group>
+        </group>
+        <group name="Clock configuration 1">
+          <boolgroup name="Very low power mode" v="Disabled" />
+          <enumgroup name="Clock source setting" v="configuration 1">
+            <MCG_mode v="PEE" />
+            <MCG_output__MHz_ v="100" />
+            <MCGIRCLK_clock__MHz_ v="0.032768" />
+            <OSCERCLK_clock__MHz_ v="8" />
+            <ERCLK32K__clock__MHz_ v="0.001" />
+            <MCGFFCLK__kHz_ v="31.25" />
+          </enumgroup>
+          <group name="System clocks">
+            <Core_clock_prescaler v="Auto select" />
+            <Core_clock v="33.333333333333" />
+            <Bus_clock_prescaler v="Auto select" />
+            <Bus_clock v="16.666666666666" />
+            <enumgroup name="PLL/FLL clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="50" />
+            </enumgroup>
+            <enumgroup name="TPM clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="50" />
+            </enumgroup>
+          </group>
+        </group>
+        <group name="Clock configuration 2">
+          <boolgroup name="Very low power mode" v="Disabled" />
+          <enumgroup name="Clock source setting" v="configuration 2">
+            <MCG_mode v="BLPI" />
+            <MCG_output__MHz_ v="0.032768000000" />
+            <MCGIRCLK_clock__MHz_ v="0.032768" />
+            <OSCERCLK_clock__MHz_ v="8" />
+            <ERCLK32K__clock__MHz_ v="0.001" />
+            <MCGFFCLK__kHz_ v="0" />
+          </enumgroup>
+          <group name="System clocks">
+            <Core_clock_prescaler v="Auto select" />
+            <Core_clock v="0.032768000000" />
+            <Bus_clock_prescaler v="Auto select" />
+            <Bus_clock v="0.032768000000" />
+            <enumgroup name="PLL/FLL clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="0" />
+            </enumgroup>
+            <enumgroup name="TPM clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="8" />
+            </enumgroup>
+          </group>
+        </group>
+        <group name="Clock configuration 3">
+          <boolgroup name="Very low power mode" v="Disabled" />
+          <enumgroup name="Clock source setting" v="configuration 3">
+            <MCG_mode v="BLPE" />
+            <MCG_output__MHz_ v="8" />
+            <MCGIRCLK_clock__MHz_ v="0.032768" />
+            <OSCERCLK_clock__MHz_ v="8" />
+            <ERCLK32K__clock__MHz_ v="0.001" />
+            <MCGFFCLK__kHz_ v="31.25" />
+          </enumgroup>
+          <group name="System clocks">
+            <Core_clock_prescaler v="Auto select" />
+            <Core_clock v="4" />
+            <Bus_clock_prescaler v="Auto select" />
+            <Bus_clock v="1" />
+            <enumgroup name="PLL/FLL clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="0" />
+            </enumgroup>
+            <enumgroup name="TPM clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="8" />
+            </enumgroup>
+          </group>
+        </group>
+        <group name="Clock configuration 4">
+          <boolgroup name="Very low power mode" v="Disabled" />
+          <enumgroup name="Clock source setting" v="configuration 4">
+            <MCG_mode v="PEE" />
+            <MCG_output__MHz_ v="48" />
+            <MCGIRCLK_clock__MHz_ v="0.032768" />
+            <OSCERCLK_clock__MHz_ v="8" />
+            <ERCLK32K__clock__MHz_ v="0.001" />
+            <MCGFFCLK__kHz_ v="31.25" />
+          </enumgroup>
+          <group name="System clocks">
+            <Core_clock_prescaler v="Auto select" />
+            <Core_clock v="48" />
+            <Bus_clock_prescaler v="Auto select" />
+            <Bus_clock v="24" />
+            <enumgroup name="PLL/FLL clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="24" />
+            </enumgroup>
+            <enumgroup name="TPM clock selection" v="Auto select">
+              <Clock_frequency__MHz_ v="24" />
+            </enumgroup>
+          </group>
+        </group>
+      </list>
+    </Properties>
+    <Methods>
+      <EmptySection_DummyValue />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+    </Events>
+    <Compiler v="GNU C Compiler" />
+    <CompilerProperties>
+      <Compiler v="GNU C Compiler" />
+      <enumgroup name="Unhandled vectors" v="One handler for all">
+        <Unhandled_int_code>
+          <StrgList><![CDATA[/* This code can be changed using the CPU component property "Build Options / Unhandled int code" */
+PE_DEBUGHALT();
+]]></StrgList>
+        </Unhandled_int_code>
+      </enumgroup>
+      <group name="User initialization">
+        <User_data_declarations>
+          <StrgList></StrgList>
+        </User_data_declarations>
+        <User_code_before_PE_initialization>
+          <StrgList></StrgList>
+        </User_code_before_PE_initialization>
+        <User_code_after_PE_initialization>
+          <StrgList></StrgList>
+        </User_code_after_PE_initialization>
+      </group>
+      <boolgroup name="Generate debugger files" v="no" />
+      <group name="Startup">
+        <Add_startup_file v="yes" />
+      </group>
+      <boolgroup name="Generate linker file" v="yes">
+        <Stack_size v="1024" />
+        <Heap_size v="0" />
+        <Set_memory_segments_to_default v="Click to set default &amp;gt;" />
+        <Default_memory_for_interrupts v="INTERNAL FLASH" />
+        <Default_memory_for_code v="INTERNAL FLASH" />
+        <Default_memory_for_data v="INTERNAL RAM" />
+        <list name="ROM/RAM Areas" v="5">
+          <group name="MemoryArea0">
+            <boolgroup name="ROM/RAM Area" v="Enabled">
+              <Name v="m_interrupts" />
+              <Qualifier v="RX" />
+              <Address v="0" />
+              <Size v="192" />
+            </boolgroup>
+          </group>
+          <group name="MemoryArea1">
+            <boolgroup name="ROM/RAM Area" v="Disabled" />
+          </group>
+          <group name="MemoryArea2">
+            <boolgroup name="ROM/RAM Area" v="Enabled">
+              <Name v="m_text" />
+              <Qualifier v="RX" />
+              <Address v="1040" />
+              <Size v="260080" />
+            </boolgroup>
+          </group>
+          <group name="MemoryArea3">
+            <boolgroup name="ROM/RAM Area" v="Enabled">
+              <Name v="m_data" />
+              <Qualifier v="RW" />
+              <Address v="536862720" />
+              <Size v="32768" />
+            </boolgroup>
+          </group>
+          <group name="MemoryArea4">
+            <boolgroup name="ROM/RAM Area" v="Enabled">
+              <Name v="NVM_Config" />
+              <Qualifier v="RW" />
+              <Address v="261120" />
+              <Size v="1024" />
+            </boolgroup>
+          </group>
+        </list>
+      </boolgroup>
+    </CompilerProperties>
+  </CPU_Bean>
+  <Bean name="UTIL1" type="Utility">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="UTIL1" />
+    </Properties>
+    <Methods>
+      <strcpy v="generate code" />
+      <strcat v="generate code" />
+      <strcatPad v="generate code" />
+      <chcat v="generate code" />
+      <Num8sToStr v="generate code" />
+      <Num8uToStr v="generate code" />
+      <Num16sToStr v="generate code" />
+      <Num16uToStr v="generate code" />
+      <Num32uToStr v="generate code" />
+      <Num32sToStr v="generate code" />
+      <Num16sToStrFormatted v="generate code" />
+      <Num16uToStrFormatted v="generate code" />
+      <Num32uToStrFormatted v="generate code" />
+      <Num32sToStrFormatted v="generate code" />
+      <strcatNum8u v="generate code" />
+      <strcatNum8s v="generate code" />
+      <strcatNum16u v="generate code" />
+      <strcatNum16s v="generate code" />
+      <strcatNum32u v="generate code" />
+      <strcatNum32s v="generate code" />
+      <strcatNum16uFormatted v="generate code" />
+      <strcatNum16sFormatted v="generate code" />
+      <strcatNum32uFormatted v="generate code" />
+      <strcatNum32sFormatted v="generate code" />
+      <strcatNum8Hex v="generate code" />
+      <strcatNum16Hex v="generate code" />
+      <strcatNum24Hex v="generate code" />
+      <strcatNum32Hex v="generate code" />
+      <strcatNum32sDotValue100 v="generate code" />
+      <IsLeapYear v="generate code" />
+      <WeekDay v="generate code" />
+      <ReadEscapedName v="generate code" />
+      <xatoi v="generate code" />
+      <ScanDate v="generate code" />
+      <ScanTime v="generate code" />
+      <ScanDecimal8uNumber v="generate code" />
+      <ScanDecimal8sNumber v="generate code" />
+      <ScanDecimal16uNumber v="generate code" />
+      <ScanDecimal16sNumber v="generate code" />
+      <ScanDecimal32uNumber v="generate code" />
+      <ScanDecimal32sNumber v="generate code" />
+      <ScanDecimal32sDotNumber v="generate code" />
+      <ScanHex8uNumber v="generate code" />
+      <ScanHex8uNumberNoPrefix v="generate code" />
+      <ScanHex16uNumber v="generate code" />
+      <ScanHex32uNumber v="generate code" />
+      <ScanSeparatedNumbers v="generate code" />
+      <ScanDoubleQuotedString v="generate code" />
+      <strcmp v="generate code" />
+      <strncmp v="generate code" />
+      <strFind v="generate code" />
+      <strtailcmp v="generate code" />
+      <strlen v="generate code" />
+      <strCutTail v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="CS1" type="CriticalSection">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="CS1" />
+      <Use_Processor_Expert_Default v="no" />
+      <Use_FreeRTOS v="no" />
+    </Properties>
+    <Methods>
+      <CriticalVariable v="generate code" />
+      <EnterCritical v="generate code" />
+      <ExitCritical v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="TU1" type="TimerUnit_LDD">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="TU1" />
+      <Module_name v="LPTMR0" />
+      <Counter v="LPTMR0_CNR" />
+      <Counter_direction v="Up" />
+      <Counter_width v="16 bits" />
+      <Value_type v="uint16_t" />
+      <enumgroup name="Input clock source" v="Internal">
+        <Counter_frequency v="Auto select" />
+      </enumgroup>
+      <enumgroup name="Counter restart" v="On-match">
+        <Period_device v="LPTMR0_CMR" />
+        <Period v="10 ms" />
+        <boolgroup name="Interrupt" v="Enabled">
+          <Interrupt v="INT_LPTimer" />
+          <Interrupt_priority v="medium priority" />
+        </boolgroup>
+      </enumgroup>
+      <list name="Channel list" v="0">
+        <EmptySection_DummyValue />
+      </list>
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes" />
+        <group name="Event mask">
+          <OnCounterRestart v="Enabled" />
+          <OnChannel0 v="Disabled" />
+          <OnChannel1 v="Disabled" />
+          <OnChannel2 v="Disabled" />
+          <OnChannel3 v="Disabled" />
+          <OnChannel4 v="Disabled" />
+          <OnChannel5 v="Disabled" />
+          <OnChannel6 v="Disabled" />
+          <OnChannel7 v="Disabled" />
+        </group>
+      </group>
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+      <Deinit v="don&amp;apos;t generate code" />
+      <Enable v="generate code" />
+      <Disable v="generate code" />
+      <SetEventMask v="generate code" />
+      <GetEventMask v="don&amp;apos;t generate code" />
+      <GetEventStatus v="don&amp;apos;t generate code" />
+      <SelectInputFrequency v="don&amp;apos;t generate code" />
+      <GetInputFrequencyReal v="don&amp;apos;t generate code" />
+      <GetInputFrequency v="don&amp;apos;t generate code" />
+      <SetPeriodTicks v="don&amp;apos;t generate code" />
+      <GetPeriodTicks v="don&amp;apos;t generate code" />
+      <ResetCounter v="don&amp;apos;t generate code" />
+      <GetCounterValue v="don&amp;apos;t generate code" />
+      <SetOffsetTicks v="don&amp;apos;t generate code" />
+      <GetOffsetTicks v="don&amp;apos;t generate code" />
+      <GetCaptureValue v="don&amp;apos;t generate code" />
+      <SelectOutputAction v="don&amp;apos;t generate code" />
+      <SelectCaptureEdge v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <SetOperationMode v="don&amp;apos;t generate code" />
+      <GetDriverState v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnCounterRestart" v="generate code">
+        <Event_procedure_name v="TU1_OnCounterRestart" />
+      </event>
+      <event name="OnChannel0" v="don&amp;apos;t generate code" />
+      <event name="OnChannel1" v="don&amp;apos;t generate code" />
+      <event name="OnChannel2" v="don&amp;apos;t generate code" />
+      <event name="OnChannel3" v="don&amp;apos;t generate code" />
+      <event name="OnChannel4" v="don&amp;apos;t generate code" />
+      <event name="OnChannel5" v="don&amp;apos;t generate code" />
+      <event name="OnChannel6" v="don&amp;apos;t generate code" />
+      <event name="OnChannel7" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="TimeDate" type="GenericTimeDate">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="TimeDate" />
+      <Critical_Section v="CS1" />
+      <Tick_Time__ms_ v="10" />
+      <boolgroup name="RTOS" v="Disabled" />
+      <boolgroup name="Shell" v="Disabled" />
+      <boolgroup name="Initialization" v="Enabled">
+        <Init_in_startup v="yes" />
+        <Date v="2014-05-16" />
+        <Time v="15:35:56" />
+      </boolgroup>
+    </Properties>
+    <Methods>
+      <AddTick v="generate code" />
+      <AddTicks v="generate code" />
+      <SetTime v="generate code" />
+      <GetTime v="generate code" />
+      <SetDate v="generate code" />
+      <GetDate v="generate code" />
+      <ParseCommand v="don&amp;apos;t generate code" />
+      <Init v="generate code" />
+      <DeInit v="generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnTimeSet" v="don&amp;apos;t generate code" />
+      <event name="OnTimeGet" v="don&amp;apos;t generate code" />
+      <event name="OnDateSet" v="don&amp;apos;t generate code" />
+      <event name="OnDateGet" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="SegLCD1" type="SegLCD_LDD">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SegLCD1" />
+      <Segment_LCD_module v="LCD" />
+      <boolgroup name="Interrupt service/event" v="Disabled" />
+      <Stop_in_Wait_mode v="no" />
+      <Stop_in_Stop_mode v="no" />
+      <group name="Power supply">
+        <LCD_operation_voltage v="3V" />
+        <Power_mode_selection v="Charge Pump" />
+        <Voltage_supply_control v="Drive VLL3 internally from VDD" />
+        <boolgroup name="Charge pump" v="Enabled">
+          <Charge_pump_clock_adjust v="Intermediate (faster) clock" />
+          <Charge_pump_clock v="2.605 kHz" />
+          <boolgroup name="Voltage regulator" v="Disabled" />
+        </boolgroup>
+        <Bias_voltage_VLL1 v="(VLL3 * 1/3) = 0.99V" />
+        <Bias_voltage_VLL2 v="(VLL3 * 2/3) = 1.98V" />
+        <Bias_voltage_VLL3 v="Connect internally to VDD(must be 3V)" />
+      </group>
+      <Blink_rate_bits_value v="0" />
+      <Blink_rate v="7.632 Hz" />
+      <LCD_frame_frequency v="61.062 Hz" />
+      <Base_clock v="1.024 kHz" />
+      <boolgroup name="Fault detect" v="Disabled" />
+      <list name="Backplane pins" v="4">
+        <group name="Backplane pin0">
+          <Backplane_pin v="LCD_P40/PTD0/SPI0_PCS0/TPM0_CH0" />
+        </group>
+        <group name="Backplane pin1">
+          <Backplane_pin v="LCD_P52/PTE4/SPI1_PCS0" />
+        </group>
+        <group name="Backplane pin2">
+          <Backplane_pin v="LCD_P19/PTB23" />
+        </group>
+        <group name="Backplane pin3">
+          <Backplane_pin v="LCD_P18/PTB22" />
+        </group>
+      </list>
+      <list name="Frontplane pins" v="8">
+        <group name="Frontplane pin0">
+          <Frontplane__pin v="LCD_P37/PTC17" />
+        </group>
+        <group name="Frontplane pin1">
+          <Frontplane__pin v="LCD_P17/PTB21" />
+        </group>
+        <group name="Frontplane pin2">
+          <Frontplane__pin v="LCD_P7/PTB7" />
+        </group>
+        <group name="Frontplane pin3">
+          <Frontplane__pin v="LCD_P8/PTB8/SPI1_PCS0/EXTRG_IN" />
+        </group>
+        <group name="Frontplane pin4">
+          <Frontplane__pin v="LCD_P53/PTE5" />
+        </group>
+        <group name="Frontplane pin5">
+          <Frontplane__pin v="LCD_P38/PTC18" />
+        </group>
+        <group name="Frontplane pin6">
+          <Frontplane__pin v="LCD_P10/PTB10/SPI1_PCS0" />
+        </group>
+        <group name="Frontplane pin7">
+          <Frontplane__pin v="LCD_P11/PTB11/SPI1_SCK" />
+        </group>
+      </list>
+      <group name="Initialization">
+        <Enable_in_init__code v="yes" />
+        <group name="Event mask">
+          <OnFaultDetectComplete v="Disabled" />
+        </group>
+      </group>
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+      <Deinit v="generate code" />
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <SetEventMask v="don&amp;apos;t generate code" />
+      <GetEventMask v="don&amp;apos;t generate code" />
+      <GetEventStatus v="generate code" />
+      <SetFrontplaneData v="generate code" />
+      <GetFrontplaneData v="generate code" />
+      <SetAlternateFrontplaneData v="don&amp;apos;t generate code" />
+      <GetAlternateFrontplaneData v="don&amp;apos;t generate code" />
+      <SetBlinking v="generate code" />
+      <SetBlank v="generate code" />
+      <StartFaultDetectFrame v="don&amp;apos;t generate code" />
+      <GetFaultDetectCounter v="don&amp;apos;t generate code" />
+      <SetOperationMode v="don&amp;apos;t generate code" />
+      <GetDriverState v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnFaultDetectComplete" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="TI1" type="TimerInt_LDD">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="TI1" />
+      <Periodic_interrupt_source v="LPTMR0_CMR" />
+      <Counter v="LPTMR0_CNR" />
+      <boolgroup name="Interrupt service/event" v="Enabled">
+        <Interrupt v="INT_LPTimer" />
+        <Interrupt_priority v="medium priority" />
+      </boolgroup>
+      <Interrupt_period v="10 ms" />
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes" />
+        <group name="Event mask">
+          <OnInterrupt v="Enabled" />
+        </group>
+      </group>
+      <group name="Referenced components">
+        <Linked_TimerUnit v="TU1" />
+      </group>
+    </Properties>
+    <Methods>
+      <Init v="generate code" />
+      <Deinit v="don&amp;apos;t generate code" />
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <SetEventMask v="don&amp;apos;t generate code" />
+      <GetEventMask v="don&amp;apos;t generate code" />
+      <GetEventStatus v="don&amp;apos;t generate code" />
+      <SelectPeriod v="don&amp;apos;t generate code" />
+      <SetPeriodUS v="don&amp;apos;t generate code" />
+      <SetPeriodMS v="don&amp;apos;t generate code" />
+      <SetPeriodSec v="don&amp;apos;t generate code" />
+      <SetPeriodReal v="don&amp;apos;t generate code" />
+      <SetFrequencyHz v="don&amp;apos;t generate code" />
+      <SetFrequencykHz v="don&amp;apos;t generate code" />
+      <SetFrequencyMHz v="don&amp;apos;t generate code" />
+      <SetOperationMode v="don&amp;apos;t generate code" />
+      <GetDriverState v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnInterrupt" v="generate code">
+        <Event_procedure_name v="TI1_OnInterrupt" />
+      </event>
+    </Events>
+  </Bean>
+  <Bean name="Flash" type="IntFLASH">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="Flash" />
+      <FLASH v="FTFA" />
+      <inhrbean type="FLASH_LDD">
+        <Enabled v="Y" />
+        <Properties>
+          <Component_name v="IntFlashLdd1" />
+          <Device v="FTFA" />
+          <group name="Flash memory organization">
+            <list name="Flash blocks" v="2">
+              <group name="Flash block 0">
+                <Address v="0" />
+                <Size v="131072" />
+                <Write_unit_size v="4" />
+                <Erase_unit_size v="1024" />
+                <Protection_unit_size v="8192" />
+              </group>
+              <group name="Flash block 1">
+                <Address v="131072" />
+                <Size v="131072" />
+                <Write_unit_size v="4" />
+                <Erase_unit_size v="1024" />
+                <Protection_unit_size v="8192" />
+              </group>
+            </list>
+          </group>
+          <boolgroup name="Use user memory areas" v="no" />
+          <enumgroup name="Interrupt service" v="Disabled">
+            <enumgroup name="Write batch size" v="Minimal">
+              <EmptySection_DummyValue />
+            </enumgroup>
+            <enumgroup name="Erase batch size" v="Minimal">
+              <EmptySection_DummyValue />
+            </enumgroup>
+            <enumgroup name="Read batch size" v="Unlimited">
+              <EmptySection_DummyValue />
+            </enumgroup>
+          </enumgroup>
+          <boolgroup name="Safe launch and wait" v="yes">
+            <enumgroup name="Safe routine location" v="On stack">
+              <EmptySection_DummyValue />
+            </enumgroup>
+            <Interruptable_wait_loop v="no" />
+          </boolgroup>
+          <group name="Initialization">
+            <Enabled_in_init__code v="yes" />
+            <group name="Event mask">
+              <OnOperationComplete v="Enabled" />
+              <OnError v="Enabled" />
+            </group>
+          </group>
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <Enable v="don&amp;apos;t generate code" />
+          <Disable v="don&amp;apos;t generate code" />
+          <GetEventMask v="don&amp;apos;t generate code" />
+          <SetEventMask v="don&amp;apos;t generate code" />
+          <Read v="don&amp;apos;t generate code" />
+          <Write v="generate code" />
+          <Erase v="generate code" />
+          <EraseBlock v="don&amp;apos;t generate code" />
+          <VerifyErasedBlock v="don&amp;apos;t generate code" />
+          <SetProtection v="don&amp;apos;t generate code" />
+          <GetErasableUnitSize v="don&amp;apos;t generate code" />
+          <GetOperationStatus v="generate code" />
+          <GetError v="generate code" />
+          <StopOperation v="don&amp;apos;t generate code" />
+          <SetSafeRoutineLocation v="don&amp;apos;t generate code" />
+          <Main v="generate code" />
+          <SetOperationMode v="don&amp;apos;t generate code" />
+          <GetDriverState v="generate code" />
+        </Methods>
+        <Events>
+          <Event_module_name v="Events" />
+          <event name="OnOperationComplete" v="generate code">
+            <Event_procedure_name v="IntFlashLdd1_OnOperationComplete" />
+          </event>
+          <event name="OnError" v="generate code">
+            <Event_procedure_name v="IntFlashLdd1_OnError" />
+          </event>
+        </Events>
+      </inhrbean>
+      <enumgroup name="Write method" v="Safe write (with save &amp;amp; erase)">
+        <Buffer_type v="Implemented by the component" />
+      </enumgroup>
+      <boolgroup name="Interrupt service/event" v="Disabled" />
+      <Wait_in_RAM v="yes" />
+      <boolgroup name="Virtual page" v="Disabled" />
+      <group name="Initialization">
+        <Events_enabled_in_init_ v="yes" />
+        <Wait_enabled_in_init_ v="yes" />
+      </group>
+      <group name="CPU clock/speed selection">
+        <FLASH_clock v="" />
+        <High_speed_mode v="This component enabled" />
+        <Low_speed_mode v="This component disabled" />
+        <Slow_speed_mode v="This component disabled" />
+      </group>
+    </Properties>
+    <Methods>
+      <DisableEvent v="generate code" />
+      <EnableEvent v="generate code" />
+      <SetWait v="don&amp;apos;t generate code" />
+      <Busy v="don&amp;apos;t generate code" />
+      <EraseFlash v="don&amp;apos;t generate code" />
+      <EraseVerify v="don&amp;apos;t generate code" />
+      <EraseSector v="don&amp;apos;t generate code" />
+      <SetByteFlash v="generate code" />
+      <GetByteFlash v="don&amp;apos;t generate code" />
+      <SetWordFlash v="generate code" />
+      <GetWordFlash v="don&amp;apos;t generate code" />
+      <SetLongFlash v="don&amp;apos;t generate code" />
+      <GetLongFlash v="don&amp;apos;t generate code" />
+      <SetBlockFlash v="generate code" />
+      <GetBlockFlash v="don&amp;apos;t generate code" />
+      <SetBytePage v="don&amp;apos;t generate code" />
+      <SetWordPage v="don&amp;apos;t generate code" />
+      <GetBytePage v="don&amp;apos;t generate code" />
+      <GetWordPage v="don&amp;apos;t generate code" />
+      <SetLongPage v="don&amp;apos;t generate code" />
+      <GetLongPage v="don&amp;apos;t generate code" />
+      <SetVirtualPageAddr v="don&amp;apos;t generate code" />
+      <RestoreToFlash v="don&amp;apos;t generate code" />
+      <SetPage v="don&amp;apos;t generate code" />
+      <GetPage v="don&amp;apos;t generate code" />
+      <DataPtr2Addr v="don&amp;apos;t generate code" />
+      <FuncPtr2Addr v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="OnWritePageEnd" v="don&amp;apos;t generate code" />
+      <event name="OnWriteEnd" v="don&amp;apos;t generate code" />
+      <event name="OnSaveBuffer" v="don&amp;apos;t generate code" />
+      <event name="OnRestoreBuffer" v="don&amp;apos;t generate code" />
+      <event name="OnEraseError" v="don&amp;apos;t generate code" />
+      <event name="OnAccessError" v="don&amp;apos;t generate code" />
+      <event name="OnReadCollisionError" v="don&amp;apos;t generate code" />
+      <event name="OnProtectionViolation" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="ESP8266" type="AsynchroSerial">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="ESP8266" />
+      <Channel v="UART0" />
+      <boolgroup name="Interrupt service/event" v="Enabled">
+        <Interrupt_RxD v="INT_UART0" />
+        <Interrupt_RxD_priority v="medium priority" />
+        <Interrupt_TxD v="INT_UART0" />
+        <Interrupt_TxD_priority v="medium priority" />
+        <Interrupt_Error v="INT_UART0" />
+        <Interrupt_Error_priority v="medium priority" />
+        <Input_buffer_size v="128" />
+        <Output_buffer_size v="128" />
+        <group name="Handshake">
+          <boolgroup name="CTS" v="Disabled" />
+          <boolgroup name="RTS" v="Disabled" />
+        </group>
+      </boolgroup>
+      <group name="Settings">
+        <Parity v="none" />
+        <Width v="8 bits" />
+        <Stop_bit v="1" />
+        <boolgroup name="Receiver" v="Enabled">
+          <RxD v="TSI0_CH2/PTA1/UART0_RX/TPM2_CH0" />
+        </boolgroup>
+        <boolgroup name="Transmitter" v="Enabled">
+          <TxD v="TSI0_CH3/PTA2/UART0_TX/TPM2_CH1" />
+        </boolgroup>
+        <Baud_rate v="115200 baud" />
+        <Break_signal v="Disabled" />
+        <Wakeup_condition v="Idle line wakeup" />
+        <Transmitter_output v="Not inverted" />
+        <Receiver_input v="Not inverted" />
+        <Stop_in_wait_mode v="no" />
+        <Idle_line_mode v="starts after start bit" />
+        <Break_generation_length v="Short" />
+      </group>
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes" />
+        <Events_enabled_in_init_ v="yes" />
+      </group>
+      <group name="CPU clock/speed selection">
+        <High_speed_mode v="This component enabled" />
+        <Low_speed_mode v="This component disabled" />
+        <Slow_speed_mode v="This component disabled" />
+      </group>
+      <group name="Referenced components">
+        <inhrbean type="Serial_LDD">
+          <Enabled v="Y" />
+          <Properties>
+            <Component_name v="ASerialLdd1" />
+            <Device v="UART0" />
+            <boolgroup name="Interrupt service/event" v="Enabled">
+              <Interrupt_RxD v="INT_UART0" />
+              <Interrupt_RxD_priority v="medium priority" />
+              <Interrupt_TxD v="INT_UART0" />
+              <Interrupt_TxD_priority v="medium priority" />
+              <Interrupt_Error v="INT_UART0" />
+              <Interrupt_Error_priority v="medium priority" />
+            </boolgroup>
+            <group name="Settings">
+              <Data_width v="8 bits" />
+              <Parity v="None" />
+              <Stop_bits v="1" />
+              <Loop_mode v="Normal" />
+              <Baud_rate v="115200 baud" />
+              <Wakeup_condition v="Idle line wakeup" />
+              <Stop_in_wait_mode v="no" />
+              <Idle_line_mode v="Starts after start bit" />
+              <Transmitter_output v="Not inverted" />
+              <Receiver_input v="Not inverted" />
+              <Break_generation_length v="10/11 bits" />
+              <boolgroup name="Receiver" v="Enabled">
+                <RxD v="TSI0_CH2/PTA1/UART0_RX/TPM2_CH0" />
+              </boolgroup>
+              <boolgroup name="Transmitter" v="Enabled">
+                <TxD v="TSI0_CH3/PTA2/UART0_TX/TPM2_CH1" />
+              </boolgroup>
+              <enumgroup name="Flow control" v="None">
+                <EmptySection_DummyValue />
+              </enumgroup>
+            </group>
+            <group name="Initialization">
+              <Enabled_in_init__code v="yes" />
+              <group name="Event mask">
+                <OnBlockSent v="Enabled" />
+                <OnBlockReceived v="Enabled" />
+                <OnTxComplete v="Disabled" />
+                <OnError v="Enabled" />
+                <OnBreak v="Enabled" />
+              </group>
+            </group>
+          </Properties>
+          <Methods>
+            <Init v="generate code" />
+            <Deinit v="don&amp;apos;t generate code" />
+            <Enable v="generate code" />
+            <Disable v="generate code" />
+            <SendBlock v="generate code" />
+            <ReceiveBlock v="generate code" />
+            <CancelBlockTransmission v="don&amp;apos;t generate code" />
+            <CancelBlockReception v="don&amp;apos;t generate code" />
+            <GetError v="generate code" />
+            <GetSentDataNum v="don&amp;apos;t generate code" />
+            <GetReceivedDataNum v="don&amp;apos;t generate code" />
+            <GetTxCompleteStatus v="don&amp;apos;t generate code" />
+            <SetEventMask v="don&amp;apos;t generate code" />
+            <GetEventMask v="don&amp;apos;t generate code" />
+            <SelectBaudRate v="don&amp;apos;t generate code" />
+            <GetSelectedBaudRate v="don&amp;apos;t generate code" />
+            <SetParity v="don&amp;apos;t generate code" />
+            <GetParity v="don&amp;apos;t generate code" />
+            <SetDataWidth v="don&amp;apos;t generate code" />
+            <GetDataWidth v="don&amp;apos;t generate code" />
+            <SetStopBitLength v="don&amp;apos;t generate code" />
+            <GetStopBitLength v="don&amp;apos;t generate code" />
+            <SetLoopMode v="don&amp;apos;t generate code" />
+            <GetLoopMode v="don&amp;apos;t generate code" />
+            <GetStats v="don&amp;apos;t generate code" />
+            <ClearStats v="don&amp;apos;t generate code" />
+            <SendBreak v="don&amp;apos;t generate code" />
+            <GetBreak v="don&amp;apos;t generate code" />
+            <TurnTxOn v="don&amp;apos;t generate code" />
+            <TurnTxOff v="don&amp;apos;t generate code" />
+            <TurnRxOn v="don&amp;apos;t generate code" />
+            <TurnRxOff v="don&amp;apos;t generate code" />
+            <ConnectPin v="don&amp;apos;t generate code" />
+            <Main v="don&amp;apos;t generate code" />
+            <SetOperationMode v="don&amp;apos;t generate code" />
+            <GetDriverState v="don&amp;apos;t generate code" />
+          </Methods>
+          <Events>
+            <Event_module_name v="Events" />
+            <event name="OnBlockReceived" v="generate code">
+              <Event_procedure_name v="ASerialLdd1_OnBlockReceived" />
+            </event>
+            <event name="OnBlockSent" v="generate code">
+              <Event_procedure_name v="ASerialLdd1_OnBlockSent" />
+            </event>
+            <event name="OnBreak" v="generate code">
+              <Event_procedure_name v="ASerialLdd1_OnBreak" />
+            </event>
+            <event name="OnError" v="generate code">
+              <Event_procedure_name v="ASerialLdd1_OnError" />
+            </event>
+            <event name="OnTxComplete" v="don&amp;apos;t generate code" />
+          </Events>
+        </inhrbean>
+      </group>
+    </Properties>
+    <Methods>
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <EnableEvent v="don&amp;apos;t generate code" />
+      <DisableEvent v="don&amp;apos;t generate code" />
+      <RecvChar v="generate code" />
+      <SendChar v="generate code" />
+      <RecvBlock v="generate code" />
+      <SendBlock v="generate code" />
+      <ClearRxBuf v="generate code" />
+      <ClearTxBuf v="generate code" />
+      <CharsInRxBuf v="don&amp;apos;t generate code" />
+      <GetCharsInRxBuf v="generate code" />
+      <CharsInTxBuf v="don&amp;apos;t generate code" />
+      <GetCharsInTxBuf v="generate code" />
+      <SetBaudRateMode v="don&amp;apos;t generate code" />
+      <GetError v="don&amp;apos;t generate code" />
+      <GetBreak v="don&amp;apos;t generate code" />
+      <SetBreak v="don&amp;apos;t generate code" />
+      <TurnTxOn v="don&amp;apos;t generate code" />
+      <TurnTxOff v="don&amp;apos;t generate code" />
+      <TurnRxOn v="don&amp;apos;t generate code" />
+      <TurnRxOff v="don&amp;apos;t generate code" />
+      <LoopMode v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="BeforeNewSpeed" v="don&amp;apos;t generate code" />
+      <event name="AfterNewSpeed" v="don&amp;apos;t generate code" />
+      <event name="OnError" v="generate code">
+        <Event_procedure_name v="ESP8266_OnError" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnRxChar" v="generate code">
+        <Event_procedure_name v="ESP8266_OnRxChar" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnRxCharExt" v="don&amp;apos;t generate code" />
+      <event name="OnTxChar" v="generate code">
+        <Event_procedure_name v="ESP8266_OnTxChar" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnFullRxBuf" v="generate code">
+        <Event_procedure_name v="ESP8266_OnFullRxBuf" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnFreeTxBuf" v="generate code">
+        <Event_procedure_name v="ESP8266_OnFreeTxBuf" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnBreak" v="don&amp;apos;t generate code" />
+      <event name="OnTxComplete" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="SW4" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW4" />
+      <Pin_for_I_O v="LCD_P47/PTD7/SPI1_MISO/UART0_TX/SPI1_MOSI" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd1" />
+          <Pin_for_I_O v="LCD_P47/PTD7/SPI1_MISO/UART0_TX/SPI1_MOSI" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="SW1" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW1" />
+      <Pin_for_I_O v="LCD_P42/PTD2/SPI0_MOSI/UART2_RX/TPM0_CH2/SPI0_MISO" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd2" />
+          <Pin_for_I_O v="LCD_P42/PTD2/SPI0_MOSI/UART2_RX/TPM0_CH2/SPI0_MISO" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="SW2" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW2" />
+      <Pin_for_I_O v="LCD_P44/PTD4/LLWU_P14/SPI1_PCS0/UART2_RX/TPM0_CH4" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd5" />
+          <Pin_for_I_O v="LCD_P44/PTD4/LLWU_P14/SPI1_PCS0/UART2_RX/TPM0_CH4" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="SW3" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW3" />
+      <Pin_for_I_O v="LCD_P46/ADC0_SE7b/PTD6/LLWU_P15/SPI1_MOSI/UART0_RX/SPI1_MISO" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd6" />
+          <Pin_for_I_O v="LCD_P46/ADC0_SE7b/PTD6/LLWU_P15/SPI1_MOSI/UART0_RX/SPI1_MISO" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="SW5" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW5" />
+      <Pin_for_I_O v="PTA13/TPM1_CH1/I2S0_TX_FS" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd7" />
+          <Pin_for_I_O v="PTA13/TPM1_CH1/I2S0_TX_FS" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="SW6" type="BitIO">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="SW6" />
+      <Pin_for_I_O v="LCD_P33/PTC13/TPM_CLKIN1" />
+      <inhrbean type="BitIO_LDD">
+        <Enabled v="Y" />
+        <Template v="BitIO_LDD" />
+        <Properties>
+          <Component_name v="BitIoLdd8" />
+          <Pin_for_I_O v="LCD_P33/PTC13/TPM_CLKIN1" />
+          <Direction v="Input/Output" />
+          <group name="Initialization">
+            <Init__direction v="Output" />
+            <Init__value v="0" />
+            <Auto_initialization v="yes" />
+          </group>
+          <Safe_mode v="yes" />
+        </Properties>
+        <Methods>
+          <Init v="generate code" />
+          <Deinit v="don&amp;apos;t generate code" />
+          <GetDir v="don&amp;apos;t generate code" />
+          <SetDir v="generate code" />
+          <SetInput v="don&amp;apos;t generate code" />
+          <SetOutput v="don&amp;apos;t generate code" />
+          <GetVal v="generate code" />
+          <PutVal v="generate code" />
+          <ClrVal v="generate code" />
+          <SetVal v="generate code" />
+          <NegVal v="generate code" />
+          <ConnectPin v="don&amp;apos;t generate code" />
+          <GetRawVal v="don&amp;apos;t generate code" />
+        </Methods>
+        <Events>
+          <EmptySection_DummyValue />
+        </Events>
+      </inhrbean>
+      <Direction v="Input/Output" />
+      <group name="Initialization">
+        <Init__direction v="Output" />
+        <Init__value v="0" />
+      </group>
+      <Safe_mode v="yes" />
+      <Optimization_for v="speed" />
+    </Properties>
+    <Methods>
+      <GetDir v="don&amp;apos;t generate code" />
+      <SetDir v="generate code" />
+      <SetInput v="don&amp;apos;t generate code" />
+      <SetOutput v="don&amp;apos;t generate code" />
+      <GetVal v="generate code" />
+      <PutVal v="generate code" />
+      <ClrVal v="generate code" />
+      <SetVal v="generate code" />
+      <NegVal v="generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+      <GetRawVal v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="TSK1" type="FreeRTOS_Tasks">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_Name v="TSK1" />
+      <FreeRTOS v="FRTOS1" />
+      <list name="Number of tasks" v="2">
+        <group name="FreeRTOS task">
+          <Task_name v="HMITask" />
+          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="1200" />
+          <Initial_Priority v="0" />
+        </group>
+        <group name="FreeRTOS task">
+          <Task_name v="GatewayTask" />
+          <Stack_size__plus_configMINIMAL_STACK_SIZE_ v="1200" />
+          <Initial_Priority v="0" />
+        </group>
+      </list>
+    </Properties>
+    <Methods>
+      <CreateTasks v="generate code" />
+    </Methods>
+    <Events>
+      <EmptySection_DummyValue />
+    </Events>
+  </Bean>
+  <Bean name="FRTOS1" type="FreeRTOS">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="FRTOS1" />
+      <RTOS_Version v="V8.2.3" />
+      <boolgroup name="Kinetis SDK" v="Disabled" />
+      <group name="Custom Port">
+        <Compiler v="automatic" />
+        <boolgroup name="Static Sources" v="Disabled" />
+        <boolgroup name="Custom portBASE_TYPE" v="Disabled" />
+      </group>
+      <Classic_CodeWarrior v="no" />
+      <Disabled_Interrupts_in_Startup v="yes" />
+      <configASSERT_defined v="yes" />
+      <Enable_GDB_Debug_Helper v="no" />
+      <Application_Task_Tags v="no" />
+      <Thread_Local_Storage_Pointers v="0" />
+      <Use_Trace_Facility v="no" />
+      <boolgroup name="Segger System Viewer Trace" v="Disabled" />
+      <boolgroup name="Percepio Trace" v="Disabled" />
+      <boolgroup name="Collect Runtime Statistics" v="Disabled" />
+      <group name="Scheduler">
+        <boolgroup name="ColdFire V1" v="Disabled" />
+        <boolgroup name="ColdFire V2" v="Disabled" />
+        <boolgroup name="Kinetis" v="Enabled">
+          <ARM_Family v="Cortex-M0+" />
+          <Max_SysCall_Interrupt_Priority v="3" />
+          <RTOS_Interrupt_Priority v="3" />
+          <Lowest_Interrupt_Priority v="3" />
+          <Compiler_Optimization_Level v="0" />
+          <boolgroup name="SysTick" v="Enabled">
+            <Core_Clock v="yes" />
+          </boolgroup>
+          <boolgroup name="Low Power Timer" v="Disabled" />
+        </boolgroup>
+        <boolgroup name="non-LDD SWI" v="Disabled" />
+        <Preemptive v="yes" />
+        <Time_Slicing v="yes" />
+        <Use_Co_Routines v="no" />
+        <Idle_should_yield v="yes" />
+        <Task_Name_Length v="12" />
+        <Minimal_Stack_Size v="200" />
+        <Maximum_Priorities v="6" />
+        <Maximum_Coroutine_Priorities v="2" />
+        <Stackoverflow_checking_method v="Method 1" />
+        <Cleanup_Resources v="yes" />
+        <TaskExitError_Handler v="no" />
+      </group>
+      <group name="Ticks">
+        <boolgroup name="Tickless Idle Mode" v="Disabled" />
+        <Tick_Rate__Hz_ v="100" />
+        <Use_16bit_ticks v="no" />
+        <boolgroup name="non-LDD Tick" v="Disabled" />
+        <boolgroup name="LDD Tick" v="Disabled" />
+      </group>
+      <group name="Queues">
+        <Queue_Registry_Size v="0" />
+        <Queue_Sets v="no" />
+      </group>
+      <group name="Semaphores and Mutexes">
+        <Use_Mutexes v="yes" />
+        <Use_Recursive_Mutexes v="yes" />
+      </group>
+      <boolgroup name="Timers" v="Disabled" />
+      <group name="Memory">
+        <Application_allocated_Heap v="no" />
+        <Memory_Allocation_Scheme v="Scheme 2: no merge" />
+        <boolgroup name="User Heap Section" v="Disabled" />
+        <Total_Heap_Size v="19000" />
+      </group>
+      <boolgroup name="Shell" v="Disabled" />
+      <Utility v="UTIL1" />
+    </Properties>
+    <Methods>
+      <xTaskCreate v="generate code" />
+      <vTaskDelete v="don&amp;apos;t generate code" />
+      <vTaskStartScheduler v="generate code" />
+      <vTaskEndScheduler v="don&amp;apos;t generate code" />
+      <vTaskSuspend v="generate code" />
+      <vTaskSuspendAll v="generate code" />
+      <vTaskResume v="generate code" />
+      <xTaskResumeAll v="generate code" />
+      <xTaskResumeFromISR v="generate code" />
+      <vTaskStepTick v="don&amp;apos;t generate code" />
+      <taskYIELD v="generate code" />
+      <taskENTER_CRITICAL v="generate code" />
+      <taskEXIT_CRITICAL v="generate code" />
+      <taskDISABLE_INTERRUPTS v="generate code" />
+      <taskENABLE_INTERRUPTS v="generate code" />
+      <vTaskDelay v="generate code" />
+      <vTaskDelayUntil v="generate code" />
+      <uxTaskPriorityGet v="generate code" />
+      <vTaskPrioritySet v="generate code" />
+      <xTaskGetTickCount v="generate code" />
+      <xTaskGetTickCountFromISR v="generate code" />
+      <xSemaphoreCreateRecursiveMutex v="generate code" />
+      <xSemaphoreTakeRecursive v="generate code" />
+      <xSemaphoreGiveRecursive v="generate code" />
+      <xSemaphoreCreateMutex v="generate code" />
+      <xSemaphoreTake v="generate code" />
+      <xSemaphoreGive v="generate code" />
+      <xSemaphoreCreateBinary v="generate code" />
+      <xSemaphoreCreateCounting v="generate code" />
+      <xSemaphoreGiveFromISR v="generate code" />
+      <xSemaphoreTakeFromISR v="generate code" />
+      <vSemaphoreDelete v="generate code" />
+      <xSemaphoreGetMutexHolder v="generate code" />
+      <pvPortMalloc v="generate code" />
+      <vPortFree v="generate code" />
+      <xPortGetFreeHeapSize v="generate code" />
+      <vTaskSetApplicationTaskTag v="don&amp;apos;t generate code" />
+      <xTaskGetApplicationTaskTag v="don&amp;apos;t generate code" />
+      <xTaskCallApplicationTaskHook v="don&amp;apos;t generate code" />
+      <xTaskGetCurrentTaskHandle v="generate code" />
+      <xTaskGetIdleTaskHandle v="generate code" />
+      <pcTaskGetTaskName v="generate code" />
+      <eTaskGetState v="don&amp;apos;t generate code" />
+      <xTaskGetSchedulerState v="generate code" />
+      <vTaskList v="don&amp;apos;t generate code" />
+      <uxTaskGetStackHighWaterMark v="generate code" />
+      <uxTaskGetNumberOfTasks v="generate code" />
+      <vTaskGetRunTimeStats v="don&amp;apos;t generate code" />
+      <uxQueueMessagesWaiting v="generate code" />
+      <uxQueueMessagesWaitingfromISR v="generate code" />
+      <xQueueCreate v="generate code" />
+      <vQueueDelete v="generate code" />
+      <xQueueReset v="generate code" />
+      <xQueueSendToBack v="generate code" />
+      <xQueueSendToFront v="generate code" />
+      <xQueueReceive v="generate code" />
+      <xQueueOverwrite v="generate code" />
+      <xQueueOverwriteFromISR v="generate code" />
+      <xQueuePeek v="generate code" />
+      <xQueuePeekFromISR v="generate code" />
+      <xQueueSendToBackFromISR v="generate code" />
+      <xQueueSendToFrontFromISR v="generate code" />
+      <xQueueReceiveFromISR v="generate code" />
+      <vQueueAddToRegistry v="generate code" />
+      <vQueueUnregisterQueue v="generate code" />
+      <xQueueIsQueueFullFromISR v="generate code" />
+      <xQueueIsQueueEmptyFromISR v="generate code" />
+      <xQueueCreateSet v="don&amp;apos;t generate code" />
+      <xQueueAddToSet v="don&amp;apos;t generate code" />
+      <xQueueRemoveFromSet v="don&amp;apos;t generate code" />
+      <xQueueSelectFromSet v="don&amp;apos;t generate code" />
+      <xQueueSelectFromSetFromISR v="don&amp;apos;t generate code" />
+      <xEventGroupCreate v="generate code" />
+      <xEventGroupWaitBits v="generate code" />
+      <xEventGroupSetBits v="generate code" />
+      <xEventGroupSetBitsFromISR v="generate code" />
+      <xEventGroupClearBits v="generate code" />
+      <xEventGroupClearBitsFromISR v="generate code" />
+      <xEventGroupGetBits v="generate code" />
+      <xEventGroupGetBitsFromISR v="generate code" />
+      <xEventGroupSync v="generate code" />
+      <xTimerCreate v="generate code" />
+      <xTimerIsTimerActive v="generate code" />
+      <xTimerStart v="generate code" />
+      <xTimerStop v="generate code" />
+      <xTimerChangePeriod v="generate code" />
+      <xTimerDelete v="generate code" />
+      <xTimerReset v="generate code" />
+      <xTimerStartFromISR v="generate code" />
+      <xTimerStopFromISR v="generate code" />
+      <xTimerChangePeriodFromISR v="generate code" />
+      <xTimerResetFromISR v="generate code" />
+      <pvTimerGetTimerID v="generate code" />
+      <xTimerGetTimerDaemonTaskHandle v="generate code" />
+      <pcTimerGetTimerName v="generate code" />
+      <xTimerPendFunctionCall v="generate code" />
+      <xTimerPendFunctionCallFromISR v="generate code" />
+      <xTaskNotifyGive v="generate code" />
+      <vTaskNotifyGiveFromISR v="generate code" />
+      <ulTaskNotifyTake v="generate code" />
+      <xTaskNotify v="generate code" />
+      <xTaskNotifyFromISR v="generate code" />
+      <xTaskNotifyAndQuery v="generate code" />
+      <xTaskNotifyAndQueryFromISR v="generate code" />
+      <xTaskNotifyWait v="generate code" />
+      <xTaskNotifyStateClear v="generate code" />
+      <vTaskSetThreadLocalStoragePointer v="generate code" />
+      <pvTaskGetThreadLocalStoragePointer v="generate code" />
+      <ParseCommand v="don&amp;apos;t generate code" />
+      <Init v="generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="vApplicationStackOverflowHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationStackOverflowHook" />
+      </event>
+      <event name="vApplicationTickHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationTickHook" />
+      </event>
+      <event name="vApplicationIdleHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationIdleHook" />
+      </event>
+      <event name="vApplicationMallocFailedHook" v="generate code">
+        <Event_procedure_name v="FRTOS1_vApplicationMallocFailedHook" />
+      </event>
+      <event name="vOnPreSleepProcessing" v="don&amp;apos;t generate code" />
+      <event name="vOnPostSleepProcessing" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+  <Bean name="BT" type="AsynchroSerial">
+    <Enabled v="Y" />
+    <Properties>
+      <Component_name v="BT" />
+      <Channel v="UART1" />
+      <boolgroup name="Interrupt service/event" v="Enabled">
+        <Interrupt_RxD v="INT_UART1" />
+        <Interrupt_RxD_priority v="medium priority" />
+        <Interrupt_TxD v="INT_UART1" />
+        <Interrupt_TxD_priority v="medium priority" />
+        <Interrupt_Error v="INT_UART1" />
+        <Interrupt_Error_priority v="medium priority" />
+        <Input_buffer_size v="1024" />
+        <Output_buffer_size v="1024" />
+        <group name="Handshake">
+          <boolgroup name="CTS" v="Disabled" />
+          <boolgroup name="RTS" v="Disabled" />
+        </group>
+      </boolgroup>
+      <group name="Settings">
+        <Parity v="none" />
+        <Width v="8 bits" />
+        <Stop_bit v="1" />
+        <boolgroup name="Receiver" v="Enabled">
+          <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
+        </boolgroup>
+        <boolgroup name="Transmitter" v="Enabled">
+          <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
+        </boolgroup>
+        <Baud_rate v="9600 baud" />
+        <Break_signal v="Disabled" />
+        <Wakeup_condition v="Idle line wakeup" />
+        <Transmitter_output v="Not inverted" />
+        <Receiver_input v="Not inverted" />
+        <Stop_in_wait_mode v="no" />
+        <Idle_line_mode v="starts after start bit" />
+        <Break_generation_length v="Short" />
+      </group>
+      <group name="Initialization">
+        <Enabled_in_init__code v="yes" />
+        <Events_enabled_in_init_ v="yes" />
+      </group>
+      <group name="CPU clock/speed selection">
+        <High_speed_mode v="This component enabled" />
+        <Low_speed_mode v="This component disabled" />
+        <Slow_speed_mode v="This component disabled" />
+      </group>
+      <group name="Referenced components">
+        <inhrbean type="Serial_LDD">
+          <Enabled v="Y" />
+          <Properties>
+            <Component_name v="ASerialLdd2" />
+            <Device v="UART1" />
+            <boolgroup name="Interrupt service/event" v="Enabled">
+              <Interrupt_RxD v="INT_UART1" />
+              <Interrupt_RxD_priority v="medium priority" />
+              <Interrupt_TxD v="INT_UART1" />
+              <Interrupt_TxD_priority v="medium priority" />
+              <Interrupt_Error v="INT_UART1" />
+              <Interrupt_Error_priority v="medium priority" />
+            </boolgroup>
+            <group name="Settings">
+              <Data_width v="8 bits" />
+              <Parity v="None" />
+              <Stop_bits v="1" />
+              <Loop_mode v="Normal" />
+              <Baud_rate v="9600 baud" />
+              <Wakeup_condition v="Idle line wakeup" />
+              <Stop_in_wait_mode v="no" />
+              <Idle_line_mode v="Starts after start bit" />
+              <Transmitter_output v="Not inverted" />
+              <Receiver_input v="Not inverted" />
+              <Break_generation_length v="10/11 bits" />
+              <boolgroup name="Receiver" v="Enabled">
+                <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
+              </boolgroup>
+              <boolgroup name="Transmitter" v="Enabled">
+                <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
+              </boolgroup>
+              <enumgroup name="Flow control" v="None">
+                <EmptySection_DummyValue />
+              </enumgroup>
+            </group>
+            <group name="Initialization">
+              <Enabled_in_init__code v="yes" />
+              <group name="Event mask">
+                <OnBlockSent v="Enabled" />
+                <OnBlockReceived v="Enabled" />
+                <OnTxComplete v="Disabled" />
+                <OnError v="Enabled" />
+                <OnBreak v="Enabled" />
+              </group>
+            </group>
+          </Properties>
+          <Methods>
+            <Init v="generate code" />
+            <Deinit v="don&amp;apos;t generate code" />
+            <Enable v="generate code" />
+            <Disable v="generate code" />
+            <SendBlock v="generate code" />
+            <ReceiveBlock v="generate code" />
+            <CancelBlockTransmission v="don&amp;apos;t generate code" />
+            <CancelBlockReception v="don&amp;apos;t generate code" />
+            <GetError v="generate code" />
+            <GetSentDataNum v="don&amp;apos;t generate code" />
+            <GetReceivedDataNum v="don&amp;apos;t generate code" />
+            <GetTxCompleteStatus v="don&amp;apos;t generate code" />
+            <SetEventMask v="don&amp;apos;t generate code" />
+            <GetEventMask v="don&amp;apos;t generate code" />
+            <SelectBaudRate v="don&amp;apos;t generate code" />
+            <GetSelectedBaudRate v="don&amp;apos;t generate code" />
+            <SetParity v="don&amp;apos;t generate code" />
+            <GetParity v="don&amp;apos;t generate code" />
+            <SetDataWidth v="don&amp;apos;t generate code" />
+            <GetDataWidth v="don&amp;apos;t generate code" />
+            <SetStopBitLength v="don&amp;apos;t generate code" />
+            <GetStopBitLength v="don&amp;apos;t generate code" />
+            <SetLoopMode v="don&amp;apos;t generate code" />
+            <GetLoopMode v="don&amp;apos;t generate code" />
+            <GetStats v="don&amp;apos;t generate code" />
+            <ClearStats v="don&amp;apos;t generate code" />
+            <SendBreak v="don&amp;apos;t generate code" />
+            <GetBreak v="don&amp;apos;t generate code" />
+            <TurnTxOn v="don&amp;apos;t generate code" />
+            <TurnTxOff v="don&amp;apos;t generate code" />
+            <TurnRxOn v="don&amp;apos;t generate code" />
+            <TurnRxOff v="don&amp;apos;t generate code" />
+            <ConnectPin v="don&amp;apos;t generate code" />
+            <Main v="don&amp;apos;t generate code" />
+            <SetOperationMode v="don&amp;apos;t generate code" />
+            <GetDriverState v="don&amp;apos;t generate code" />
+          </Methods>
+          <Events>
+            <Event_module_name v="Events" />
+            <event name="OnBlockReceived" v="generate code">
+              <Event_procedure_name v="ASerialLdd2_OnBlockReceived" />
+            </event>
+            <event name="OnBlockSent" v="generate code">
+              <Event_procedure_name v="ASerialLdd2_OnBlockSent" />
+            </event>
+            <event name="OnBreak" v="generate code">
+              <Event_procedure_name v="ASerialLdd2_OnBreak" />
+            </event>
+            <event name="OnError" v="generate code">
+              <Event_procedure_name v="ASerialLdd2_OnError" />
+            </event>
+            <event name="OnTxComplete" v="don&amp;apos;t generate code" />
+          </Events>
+        </inhrbean>
+      </group>
+    </Properties>
+    <Methods>
+      <Enable v="don&amp;apos;t generate code" />
+      <Disable v="don&amp;apos;t generate code" />
+      <EnableEvent v="don&amp;apos;t generate code" />
+      <DisableEvent v="don&amp;apos;t generate code" />
+      <RecvChar v="generate code" />
+      <SendChar v="generate code" />
+      <RecvBlock v="generate code" />
+      <SendBlock v="generate code" />
+      <ClearRxBuf v="generate code" />
+      <ClearTxBuf v="generate code" />
+      <CharsInRxBuf v="don&amp;apos;t generate code" />
+      <GetCharsInRxBuf v="generate code" />
+      <CharsInTxBuf v="don&amp;apos;t generate code" />
+      <GetCharsInTxBuf v="generate code" />
+      <SetBaudRateMode v="don&amp;apos;t generate code" />
+      <GetError v="don&amp;apos;t generate code" />
+      <GetBreak v="don&amp;apos;t generate code" />
+      <SetBreak v="don&amp;apos;t generate code" />
+      <TurnTxOn v="don&amp;apos;t generate code" />
+      <TurnTxOff v="don&amp;apos;t generate code" />
+      <TurnRxOn v="don&amp;apos;t generate code" />
+      <TurnRxOff v="don&amp;apos;t generate code" />
+      <LoopMode v="don&amp;apos;t generate code" />
+      <ConnectPin v="don&amp;apos;t generate code" />
+    </Methods>
+    <Events>
+      <Event_module_name v="Events" />
+      <event name="BeforeNewSpeed" v="don&amp;apos;t generate code" />
+      <event name="AfterNewSpeed" v="don&amp;apos;t generate code" />
+      <event name="OnError" v="generate code">
+        <Event_procedure_name v="BT_OnError" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnRxChar" v="generate code">
+        <Event_procedure_name v="BT_OnRxChar" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnRxCharExt" v="don&amp;apos;t generate code" />
+      <event name="OnTxChar" v="generate code">
+        <Event_procedure_name v="BT_OnTxChar" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnFullRxBuf" v="generate code">
+        <Event_procedure_name v="BT_OnFullRxBuf" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnFreeTxBuf" v="generate code">
+        <Event_procedure_name v="BT_OnFreeTxBuf" />
+        <Priority v="same as interrupt" />
+      </event>
+      <event name="OnBreak" v="don&amp;apos;t generate code" />
+      <event name="OnTxComplete" v="don&amp;apos;t generate code" />
+    </Events>
+  </Bean>
+</PE_PROJECT_SETTINGS_DOCUMENTATION>
+
