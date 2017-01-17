@@ -53,6 +53,7 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
   for(;;) {
 	  setLCD("9991");
 	  SymbolON(11,0);
+	  BT_showString("Agro Robots WiFi Spot");
 	  xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 	  switch (connection.status)
 	  {
@@ -97,6 +98,8 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 	  	  case WIFI_CONNECTING:
 	  		FRTOS1_vTaskDelay(2000/portTICK_RATE_MS);
 	  		connectionMode();
+	  		/*FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
+			getIP();*/
 			xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 			FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
 			connectingToServer();

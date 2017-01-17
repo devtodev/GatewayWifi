@@ -37,6 +37,7 @@ void connectToAgroRobots();
 void setPassword(char *password);
 void enterWifiMode();
 void connectionMode();
+void getIP();
 void connectingToServer();
 char getStatus();
 char *getWifiBuffer();

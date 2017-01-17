@@ -5,6 +5,9 @@
  *      Author: Carlos Miguens
  */
 
+
+// esptool.py --port /dev/ttyUSB0 write_flash 0x00000 'AiThinker_ESP8266_DIO_8M_8M_20160615_V1.5.4.bin'
+
 #define DEBUG 0
 
 #include "WIFI_actions.h"
@@ -53,6 +56,9 @@ void sendATCommand(char *ATCommand)
 	sendPartialATCommand(ATCommand);
 	ESP8266_SendChar('\r');
 	ESP8266_SendChar('\n');
+//	BT_SendChar('\r');
+//	BT_SendChar('\n');
+
 	xSemaphoreGive(xSemaphoreWifiATCommandSend);
 }
 
@@ -63,6 +69,7 @@ void sendPartialATCommand(char *ATCommand)
 	while (*index != '\0')
 	{
 		ESP8266_SendChar(*index);
+//		BT_SendChar(*index);
 		index++;
 	}
 }
@@ -117,9 +124,16 @@ void connectionMode()
 	sendATCommand("AT+CIPMUX=0\0");
 }
 
-void connectingToServer()
+
+void getIP()
 {
-	sendATCommand("AT+CIPSTART=\"TCP\",\"54.208.231.134\",56765\0");
+	sendATCommand("AT+CIFSR\0");
+}
+
+void connectingToServer()
+{//AT+CWJAP="8ball","musica789"
+ //AT+CIPSTART=2,"TCP","54.208.231.134",80
+	sendATCommand("AT+CIPSTART=\"TCP\",\"54.208.231.134\",3000\0");
 }
 
 char getStatus()
@@ -158,6 +172,7 @@ void setMode();
 void spotsParse();
 void spotsNewConnect();
 void evaluarConnectionMode();
+void evaluarGetIP();
 void evaluarConeccionConServer();
 void verificarEnvioAlServer();
 void analizarEnvioDelServer();
@@ -167,6 +182,7 @@ void readBuffer()
   if (interpretarBuffer("+RST\0", setMode) == 1) return;
   if (interpretarBuffer("+CWMODE\0", enterMode) == 1) return;
   if (interpretarBuffer("+CWLAP\0", spotsParse) == 1) return;
+  if (interpretarBuffer("+CIFSR\0", evaluarGetIP) == 1) return;
   if (interpretarBuffer("+CWJAP\0", spotsNewConnect) == 1) return;
   if (interpretarBuffer("+CIPMUX\0", evaluarConnectionMode) == 1) return;
   if (interpretarBuffer("+CIPSTART\0", evaluarConeccionConServer) == 1) return;
@@ -230,6 +246,22 @@ void evaluarConnectionMode()
 	xSemaphoreGive(xSemaphoreWifiRefresh);
 }
 
+void evaluarGetIP()
+{
+	int position[10];
+	int error = find(wifiInputBuffer, "ERROR\0", (int *) &position);
+	if (error > 0)
+	{
+		BT_sendSaltoLinea();
+		BT_showString("Al obtener el IP\0");
+		connectionMode();
+		return;
+	}
+	// conecto correctamente
+	xSemaphoreGive(xSemaphoreWifiRefresh);
+}
+
+
 void spotsNewConnect()
 {
 	char SSIDPassword[MAXLENGHTWIFINAME*2];
@@ -272,7 +304,7 @@ void resetModule()
 void setMode()
 {
 	FRTOS1_vTaskDelay(2000/portTICK_RATE_MS);
-	sendATCommand("AT+CWMODE=3\0");
+	sendATCommand("AT+CWMODE=1\0");
 }
 
 void spotsParse()
