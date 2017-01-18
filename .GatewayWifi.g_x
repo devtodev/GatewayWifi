@@ -150,7 +150,7 @@
       <File Name="Generated_Code/SW4.h" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="54" />
       <File Name="Generated_Code/TimeDate.h" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="28" />
       <File Name="Generated_Code/SW4.c" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="54" />
-      <File Name="Documentation/GatewayWifi_SIGNALS.txt" FileDate="2017-01-16, 23:43:25" FileAge="1484621005000" FileType="3072" />
+      <File Name="Documentation/GatewayWifi_SIGNALS.txt" FileDate="2017-01-18, 17:02:57" FileAge="1484769777000" FileType="3072" />
       <File Name="Generated_Code/SW2.h" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="58" />
       <File Name="Generated_Code/TimeDate.c" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="28" />
       <File Name="Generated_Code/SW2.c" FileDate="2017-01-16, 01:10:44" FileAge="1484539844000" FileType="45637" CompNumb="58" />
@@ -171,5 +171,5 @@
       <File Name="Static_Code/PDD/TPM_PDD.h" FileDate="2016-12-05, 21:22:24" FileAge="1480983744000" FileType="1048576" />
     </GeneratedByPE>
   </GeneratedFilesList>
-  <CodeGenReference>3</CodeGenReference>
+  <CodeGenReference>5</CodeGenReference>
 </CodeGenerationInfo>

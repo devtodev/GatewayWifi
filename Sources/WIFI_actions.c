@@ -131,8 +131,8 @@ void getIP()
 }
 
 void connectingToServer()
-{//AT+CWJAP="8ball","musica789"
- //AT+CIPSTART=2,"TCP","54.208.231.134",80
+{//AT+CWJAP="Telecentro-5680","mamabety56"
+ //AT+CIPSTART="TCP","54.208.231.134",3000
 	sendATCommand("AT+CIPSTART=\"TCP\",\"54.208.231.134\",3000\0");
 }
 

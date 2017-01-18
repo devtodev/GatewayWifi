@@ -44,11 +44,10 @@ static portTASK_FUNCTION(GatewayTask, pvParameters) {
 static portTASK_FUNCTION(HMITask, pvParameters) {
   char menuConectado[MENUMAXLENGHT][64] = {"Switch 1", "Switch 2", "Switch 3", "Switch 4", "Switch 5", "Switch 6", "Desconectar"};
   char opcionHIM[30];
-  int i;
+  int i = 0;
   /* Write your task initialization code here ... */
   BT_init();
   MySegLCDPtr = SegLCD1_Init(NULL);
-
 
   for(;;) {
 	  setLCD("9991");
@@ -65,10 +64,12 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 	  		FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
 	  		refreshWifiSpots();
 	  		xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
-	  		if (SSIDStoredVisible())
+	  		if ((SSIDStoredVisible()) && (i < 2))
 	  		{
 	  			strcpy(connection.ssid, storeSSID);
 	  			strcpy(connection.password, storePassword);
+	  			tryToConnect();
+	  			i++;
 	  		} else {
 				// mostrar los SSIDs
 				if (BT_showMenu(&spotSSID, &connection.ssid[0]) != -69)
