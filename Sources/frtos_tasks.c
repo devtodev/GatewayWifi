@@ -42,7 +42,7 @@ static portTASK_FUNCTION(GatewayTask, pvParameters) {
 }
 
 static portTASK_FUNCTION(HMITask, pvParameters) {
-  char menuConectado[MENUMAXLENGHT][64] = {"Switch 1", "Switch 2", "Switch 3", "Switch 4", "Switch 5", "Switch 6", "Desconectar"};
+  char menuConectado[MENUMAXLENGHT][64] = {"Desconectar"};
   char opcionHIM[30];
   int i = 0;
   /* Write your task initialization code here ... */
@@ -106,51 +106,10 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 			connectingToServer();
 		  break;
 	  	  case WIFI_CONNECTED:
+
 	  		switch (BT_showMenu(&menuConectado, &opcionHIM[0]))
 	  		{
 				case 0:
-					SW1_NegVal();
-					if (SW1_GetVal())
-						sendInfo("1|1");
-					else
-						sendInfo("1|0");
-				break;
-				case 1:
-					SW2_NegVal();
-					if (SW1_GetVal())
-						sendInfo("2|1");
-					else
-						sendInfo("2|0");
-				break;
-				case 2:
-					SW3_NegVal();
-					if (SW1_GetVal())
-						sendInfo("3|1");
-					else
-						sendInfo("3|0");
-				break;
-				case 3:
-					SW4_NegVal();
-					if (SW1_GetVal())
-						sendInfo("4|1");
-					else
-						sendInfo("4|0");
-				break;
-				case 4:
-					SW5_NegVal();
-					if (SW1_GetVal())
-						sendInfo("5|1");
-					else
-						sendInfo("5|0");
-				break;
-				case 5:
-					SW6_NegVal();
-					if (SW1_GetVal())
-						sendInfo("6|1");
-					else
-						sendInfo("6|0");
-				break;
-				case 6:
 					disconectFromSpot();
 				break;
 				case -69:

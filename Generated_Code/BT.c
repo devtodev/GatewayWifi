@@ -7,7 +7,7 @@
 **     Version     : Component 02.611, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-01-16, 01:10, # CodeGen: 0
+**     Date/Time   : 2017-01-19, 12:34, # CodeGen: 5
 **     Abstract    :
 **         This component "AsynchroSerial" implements an asynchronous serial
 **         communication. The component supports different settings of
@@ -17,13 +17,13 @@
 **         The component requires one on-chip asynchronous serial channel.
 **     Settings    :
 **          Component name                                 : BT
-**          Channel                                        : UART1
+**          Channel                                        : UART0
 **          Interrupt service/event                        : Enabled
-**            Interrupt RxD                                : INT_UART1
+**            Interrupt RxD                                : INT_UART0
 **            Interrupt RxD priority                       : medium priority
-**            Interrupt TxD                                : INT_UART1
+**            Interrupt TxD                                : INT_UART0
 **            Interrupt TxD priority                       : medium priority
-**            Interrupt Error                              : INT_UART1
+**            Interrupt Error                              : INT_UART0
 **            Interrupt Error priority                     : medium priority
 **            Input buffer size                            : 1024
 **            Output buffer size                           : 1024
@@ -35,10 +35,10 @@
 **            Width                                        : 8 bits
 **            Stop bit                                     : 1
 **            Receiver                                     : Enabled
-**              RxD                                        : LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL
+**              RxD                                        : TSI0_CH2/PTA1/UART0_RX/TPM2_CH0
 **              RxD pin signal                             : 
 **            Transmitter                                  : Enabled
-**              TxD                                        : LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA
+**              TxD                                        : TSI0_CH3/PTA2/UART0_TX/TPM2_CH1
 **              TxD pin signal                             : 
 **            Baud rate                                    : 9600 baud
 **            Break signal                                 : Disabled

@@ -128,7 +128,6 @@ void ESP8266_OnRxChar(void)
 {
 	char data;
 	ESP8266_RecvChar(&data);
-	BT_SendChar(data);
 	if (connection.status == WIFI_ATMODE)
 		BT_SendChar(data);
 	else

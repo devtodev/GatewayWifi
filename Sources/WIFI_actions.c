@@ -8,7 +8,7 @@
 
 // esptool.py --port /dev/ttyUSB0 write_flash 0x00000 'AiThinker_ESP8266_DIO_8M_8M_20160615_V1.5.4.bin'
 
-#define DEBUG 0
+#define DEBUG 1
 
 #include "WIFI_actions.h"
 #include "ESP8266.h"
@@ -178,6 +178,7 @@ void analizarEnvioDelServer();
 
 void readBuffer()
 {
+// AT COMMANDS
   if (interpretarBuffer("+RST\0", setMode) == 1) return;
   if (interpretarBuffer("+CWMODE\0", enterMode) == 1) return;
   if (interpretarBuffer("+CWLAP\0", spotsParse) == 1) return;
@@ -187,12 +188,13 @@ void readBuffer()
   if (interpretarBuffer("+CIPSTART\0", evaluarConeccionConServer) == 1) return;
   if (interpretarBuffer("+CIPSEND\0", verificarEnvioAlServer) == 1) return;
   if (interpretarBuffer("CLOSED\0", resetModule) == 1) return;
+  // ROBOT COMMANDS
   if (interpretarBuffer("+IPD\0", analizarEnvioDelServer) == 1) return;
 }
 
 void analizarEnvioDelServer()
 {
-
+	BT_showString("Robot command!\r\n\0");
 }
 
 void verificarEnvioAlServer()
