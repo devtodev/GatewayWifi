@@ -6,7 +6,7 @@
 **     Version     : Component 01.002, Driver 01.04, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-01-19, 12:34, # CodeGen: 5
+**     Date/Time   : 2017-01-19, 12:46, # CodeGen: 6
 **     Abstract    :
 **
 **     Settings    :
@@ -129,8 +129,8 @@
     (tIsrFunc)&Cpu_ivINT_I2C1,         /* 0x19  0x00000064   -   ivINT_I2C1                    unused by PE */
     (tIsrFunc)&Cpu_ivINT_SPI0,         /* 0x1A  0x00000068   -   ivINT_SPI0                    unused by PE */
     (tIsrFunc)&Cpu_ivINT_SPI1,         /* 0x1B  0x0000006C   -   ivINT_SPI1                    unused by PE */
-    (tIsrFunc)&ASerialLdd2_Interrupt,  /* 0x1C  0x00000070   2   ivINT_UART0                   used by PE */
-    (tIsrFunc)&ASerialLdd1_Interrupt,  /* 0x1D  0x00000074   2   ivINT_UART1                   used by PE */
+    (tIsrFunc)&ASerialLdd1_Interrupt,  /* 0x1C  0x00000070   2   ivINT_UART0                   used by PE */
+    (tIsrFunc)&ASerialLdd2_Interrupt,  /* 0x1D  0x00000074   2   ivINT_UART1                   used by PE */
     (tIsrFunc)&Cpu_ivINT_UART2,        /* 0x1E  0x00000078   -   ivINT_UART2                   unused by PE */
     (tIsrFunc)&Cpu_ivINT_ADC0,         /* 0x1F  0x0000007C   -   ivINT_ADC0                    unused by PE */
     (tIsrFunc)&Cpu_ivINT_CMP0,         /* 0x20  0x00000080   -   ivINT_CMP0                    unused by PE */

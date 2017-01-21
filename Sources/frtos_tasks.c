@@ -30,6 +30,8 @@
 #include "SW6.h"
 #include "UTIL1.h"
 #include "LCD/LCDConfig.h"
+
+
 static portTASK_FUNCTION(GatewayTask, pvParameters) {
 
   initGateway();

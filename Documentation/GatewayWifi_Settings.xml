@@ -605,13 +605,13 @@ PE_DEBUGHALT();
     <Enabled v="Y" />
     <Properties>
       <Component_name v="ESP8266" />
-      <Channel v="UART1" />
+      <Channel v="UART0" />
       <boolgroup name="Interrupt service/event" v="Enabled">
-        <Interrupt_RxD v="INT_UART1" />
+        <Interrupt_RxD v="INT_UART0" />
         <Interrupt_RxD_priority v="medium priority" />
-        <Interrupt_TxD v="INT_UART1" />
+        <Interrupt_TxD v="INT_UART0" />
         <Interrupt_TxD_priority v="medium priority" />
-        <Interrupt_Error v="INT_UART1" />
+        <Interrupt_Error v="INT_UART0" />
         <Interrupt_Error_priority v="medium priority" />
         <Input_buffer_size v="128" />
         <Output_buffer_size v="128" />
@@ -625,10 +625,10 @@ PE_DEBUGHALT();
         <Width v="8 bits" />
         <Stop_bit v="1" />
         <boolgroup name="Receiver" v="Enabled">
-          <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
+          <RxD v="LCD_P60/ADC0_DM0/ADC0_SE4a/PTE21/TPM1_CH1/UART0_RX" />
         </boolgroup>
         <boolgroup name="Transmitter" v="Enabled">
-          <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
+          <TxD v="LCD_P59/ADC0_DP0/ADC0_SE0/PTE20/TPM1_CH0/UART0_TX" />
         </boolgroup>
         <Baud_rate v="115200 baud" />
         <Break_signal v="Disabled" />
@@ -653,13 +653,13 @@ PE_DEBUGHALT();
           <Enabled v="Y" />
           <Properties>
             <Component_name v="ASerialLdd1" />
-            <Device v="UART1" />
+            <Device v="UART0" />
             <boolgroup name="Interrupt service/event" v="Enabled">
-              <Interrupt_RxD v="INT_UART1" />
+              <Interrupt_RxD v="INT_UART0" />
               <Interrupt_RxD_priority v="medium priority" />
-              <Interrupt_TxD v="INT_UART1" />
+              <Interrupt_TxD v="INT_UART0" />
               <Interrupt_TxD_priority v="medium priority" />
-              <Interrupt_Error v="INT_UART1" />
+              <Interrupt_Error v="INT_UART0" />
               <Interrupt_Error_priority v="medium priority" />
             </boolgroup>
             <group name="Settings">
@@ -675,10 +675,10 @@ PE_DEBUGHALT();
               <Receiver_input v="Not inverted" />
               <Break_generation_length v="10/11 bits" />
               <boolgroup name="Receiver" v="Enabled">
-                <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
+                <RxD v="LCD_P60/ADC0_DM0/ADC0_SE4a/PTE21/TPM1_CH1/UART0_RX" />
               </boolgroup>
               <boolgroup name="Transmitter" v="Enabled">
-                <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
+                <TxD v="LCD_P59/ADC0_DP0/ADC0_SE0/PTE20/TPM1_CH0/UART0_TX" />
               </boolgroup>
               <enumgroup name="Flow control" v="None">
                 <EmptySection_DummyValue />
@@ -1447,13 +1447,13 @@ PE_DEBUGHALT();
     <Enabled v="Y" />
     <Properties>
       <Component_name v="BT" />
-      <Channel v="UART0" />
+      <Channel v="UART1" />
       <boolgroup name="Interrupt service/event" v="Enabled">
-        <Interrupt_RxD v="INT_UART0" />
+        <Interrupt_RxD v="INT_UART1" />
         <Interrupt_RxD_priority v="medium priority" />
-        <Interrupt_TxD v="INT_UART0" />
+        <Interrupt_TxD v="INT_UART1" />
         <Interrupt_TxD_priority v="medium priority" />
-        <Interrupt_Error v="INT_UART0" />
+        <Interrupt_Error v="INT_UART1" />
         <Interrupt_Error_priority v="medium priority" />
         <Input_buffer_size v="1024" />
         <Output_buffer_size v="1024" />
@@ -1467,10 +1467,10 @@ PE_DEBUGHALT();
         <Width v="8 bits" />
         <Stop_bit v="1" />
         <boolgroup name="Receiver" v="Enabled">
-          <RxD v="TSI0_CH2/PTA1/UART0_RX/TPM2_CH0" />
+          <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
         </boolgroup>
         <boolgroup name="Transmitter" v="Enabled">
-          <TxD v="TSI0_CH3/PTA2/UART0_TX/TPM2_CH1" />
+          <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
         </boolgroup>
         <Baud_rate v="9600 baud" />
         <Break_signal v="Disabled" />
@@ -1495,13 +1495,13 @@ PE_DEBUGHALT();
           <Enabled v="Y" />
           <Properties>
             <Component_name v="ASerialLdd2" />
-            <Device v="UART0" />
+            <Device v="UART1" />
             <boolgroup name="Interrupt service/event" v="Enabled">
-              <Interrupt_RxD v="INT_UART0" />
+              <Interrupt_RxD v="INT_UART1" />
               <Interrupt_RxD_priority v="medium priority" />
-              <Interrupt_TxD v="INT_UART0" />
+              <Interrupt_TxD v="INT_UART1" />
               <Interrupt_TxD_priority v="medium priority" />
-              <Interrupt_Error v="INT_UART0" />
+              <Interrupt_Error v="INT_UART1" />
               <Interrupt_Error_priority v="medium priority" />
             </boolgroup>
             <group name="Settings">
@@ -1517,10 +1517,10 @@ PE_DEBUGHALT();
               <Receiver_input v="Not inverted" />
               <Break_generation_length v="10/11 bits" />
               <boolgroup name="Receiver" v="Enabled">
-                <RxD v="TSI0_CH2/PTA1/UART0_RX/TPM2_CH0" />
+                <RxD v="LCD_P49/PTE1/SPI1_MOSI/UART1_RX/SPI1_MISO/I2C1_SCL" />
               </boolgroup>
               <boolgroup name="Transmitter" v="Enabled">
-                <TxD v="TSI0_CH3/PTA2/UART0_TX/TPM2_CH1" />
+                <TxD v="LCD_P48/PTE0/SPI1_MISO/UART1_TX/RTC_CLKOUT/CMP0_OUT/I2C1_SDA" />
               </boolgroup>
               <enumgroup name="Flow control" v="None">
                 <EmptySection_DummyValue />
