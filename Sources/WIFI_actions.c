@@ -56,8 +56,6 @@ void sendATCommand(char *ATCommand)
 	sendPartialATCommand(ATCommand);
 	ESP8266_SendChar('\r');
 	ESP8266_SendChar('\n');
-//	BT_SendChar('\r');
-//	BT_SendChar('\n');
 
 	xSemaphoreGive(xSemaphoreWifiATCommandSend);
 }
@@ -76,9 +74,6 @@ void sendPartialATCommand(char *ATCommand)
 
 void initGateway()
 {
-	char *password;
-	int position[10];
-
 	xSemaphoreWifiATCommand = xSemaphoreCreateBinary();
 	xSemaphoreWifiRefresh = xSemaphoreCreateBinary();
 	xSemaphoreWifiATCommandSend = xSemaphoreCreateBinary();
@@ -86,17 +81,7 @@ void initGateway()
 	FRTOS1_vTaskDelay(500/portTICK_RATE_MS);
 	resetModule();
 	// get store passwords
-	password = (char *) NVMC_GetSSID_PASSData();
-
-	if (password[0] == '|')
-	{
-		if (find(password, "|\0", (int *) &position) > 0)
-		{
-			strsub(password, 0+1, position[1]-1, storeSSID);
-			strsub(password, position[1]+1, position[2]-1, storePassword);
-		}
-	}
-
+	getStoredConnections();
 }
 
 void setSSID(char *ssid)
@@ -262,34 +247,6 @@ void evaluarGetIP()
 	xSemaphoreGive(xSemaphoreWifiRefresh);
 }
 
-
-void spotsNewConnect()
-{
-	char SSIDPassword[MAXLENGHTWIFINAME*2];
-
-	int position[10];
-	int fail = find(wifiInputBuffer, "FAIL\0", (int *) &position);
-	fail = (fail == 0)? find(wifiInputBuffer, "ERROR\0", (int *) &position) : fail;
-	if (fail > 0)
-	{
-		BT_sendSaltoLinea();
-		BT_showString("Password incorrecta\0");
-		xSemaphoreGive(xSemaphoreWifiRefresh);
-		return;
-	}
-	// conecto correctamente
-	connection.status = WIFI_CONNECTING;
-	// almacena el SSID & Password
-	strcpy(SSIDPassword, "|\0");
-	strcat(SSIDPassword, connection.ssid);
-	strcat(SSIDPassword, "|\0");
-	strcat(SSIDPassword, connection.password);
-	strcat(SSIDPassword, "|\0");
-	(void)NVMC_SaveSSID_PASSData(&SSIDPassword, sizeof(SSIDPassword));
-
-	xSemaphoreGive(xSemaphoreWifiRefresh);
-}
-
 void enterMode()
 {
 	xSemaphoreGive(xSemaphoreWifiRefresh);
@@ -329,6 +286,28 @@ void spotsParse()
 	xSemaphoreGive(xSemaphoreWifiRefresh);
 }
 
+
+void spotsNewConnect()
+{
+	int position[10];
+	int fail = find(wifiInputBuffer, "FAIL\0", (int *) &position);
+	fail = (fail == 0)? find(wifiInputBuffer, "ERROR\0", (int *) &position) : fail;
+	if (fail > 0)
+	{
+		BT_sendSaltoLinea();
+		BT_showString("Password incorrecta\0");
+		xSemaphoreGive(xSemaphoreWifiRefresh);
+		return;
+	}
+	// conecto correctamente
+	// TODO: en status se persiste la cantidad de conexiones
+	// 		 se inicializa en 0 y se agregar 1 en cada conexión
+	connection.status = WIFI_CONNECTING;
+	setStoredConnections();
+
+	xSemaphoreGive(xSemaphoreWifiRefresh);
+}
+
 int SSIDStoredVisible()
 {
 	char opcion[MENUMAXLENGHT];
@@ -348,6 +327,99 @@ int SSIDStoredVisible()
 
 void disconectFromSpot()
 {
-	(void)NVMC_SaveSSID_PASSData(&"\0", sizeof("\0"));
+	// (void)NVMC_SaveSSID_PASSData(&"\0", sizeof("\0"));
 	resetModule();
+}
+
+void populateStoredConections(Connection *connections)
+{
+	char SSIDPassword[MAXLENGHTWIFINAME*2+20];
+	char temp[15];
+	for (int i = 0; i < storeConnectionsSize; i++)
+	{
+		// almacena el SSID & Password
+		strcpy(SSIDPassword, "|\0");
+		strcat(SSIDPassword, connections[i].ssid);
+		strcat(SSIDPassword, "|\0");
+		strcat(SSIDPassword, connections[i].password);
+		strcat(SSIDPassword, "|\0");
+		Num16sToStr(&temp, 15, connections[i].status);
+		strcat(SSIDPassword, &temp);
+		strcat(SSIDPassword, "|\0");
+		(void)NVMC_SaveSSID_PASSData(&SSIDPassword, i);
+	}
+}
+
+void setStoredConnections(Connection *connection)
+{
+	// verificar si el ssid existe en la lista
+	int i = 0;
+	int cursor = -1;
+	while ((i < storeConnectionsSize) && (cursor == -1))
+	{
+		if (strcmp(connection->ssid, storedConnections[i].ssid))
+		{
+			// 	si existe verificar si la password no cambio
+			if (strcmp(connection->password, storedConnections[i].password))
+			{
+				return;
+			} else {
+				cursor = i;
+				strcpy(storedConnections[cursor].password, connection->password); // por si cambio actualiza la password
+			}
+		}
+		i++;
+	}
+	if (cursor == -1)
+	{
+		cursor = storeConnectionsSize;
+		strcpy(storedConnections[cursor].password, connection->password);
+		strcpy(storedConnections[cursor].ssid, connection->ssid);
+		storedConnections[cursor].status = 0;
+		storeConnectionsSize = (storeConnectionsSize < STORED_CONNECTIONS_SIZE)? storeConnectionsSize + 1 : storeConnectionsSize;
+	}
+
+	storedConnections[cursor].status++;
+#if !TEST_CONNECTIONS
+	populateStoredConections(Connection *connections);
+#endif
+}
+
+#if TEST_CONNECTIONS
+void testStoredConnections()
+{
+	getStoredConnections();
+	Connection conn;
+	for (int i = 0; i < 32; i++)
+	{
+		strcpy(conn.ssid, "ssid\0");
+		strcpy(conn.password, "pass\0");
+		conn.status = i;
+		setStoredConnections(&conn);
+	}
+	populateStoredConections(storedConnections);
+}
+#endif
+
+void getStoredConnections()
+{
+	char *data;
+	int position[10];
+	int i = 0;
+	storeConnectionsSize = i;
+	while (i < STORED_CONNECTIONS_SIZE)
+	{
+		data = (char *) NVMC_GetSSID_PASSData(i);
+		if (data[0] == '|')
+		{
+			storeConnectionsSize = i;
+			if (find(data, "|\0", (int *) &position) > 0)
+			{
+				strsub(data, 0+1, position[1]-1, storedConnections[i].ssid);
+				strsub(data, position[1]+1, position[2]-1, storedConnections[i].password);
+				strsub(data, position[3]+1, position[4]-1, storedConnections[i].status);
+			} else return 0;
+		} else return 0;
+		i++;
+	}
 }

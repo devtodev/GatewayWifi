@@ -108,7 +108,6 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 			connectingToServer();
 		  break;
 	  	  case WIFI_CONNECTED:
-
 	  		switch (BT_showMenu(&menuConectado, &opcionHIM[0]))
 	  		{
 				case 0:
@@ -127,6 +126,7 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 }
 
 void CreateTasks(void) {
+  testStoredConnections();
   if (FRTOS1_xTaskCreate(
      GatewayTask,  /* pointer to the task */
       "Gateway", /* task name for kernel awareness debugging */

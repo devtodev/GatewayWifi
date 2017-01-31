@@ -8,14 +8,15 @@
 #include "FreeRTOS.h"
 #include "semphr.h"
 
-#define WIFI_CONNECTED 		1
-#define WIFI_DISCONNECTED	2
-#define WIFI_CONNECTING		3
-#define WIFI_ATMODE			4
-#define MAXCANTSPOTSWIFI	64
-#define MAXLENGHTWIFINAME	64
+#define WIFI_CONNECTED 			1
+#define WIFI_DISCONNECTED		2
+#define WIFI_CONNECTING			3
+#define WIFI_ATMODE				4
+#define MAXCANTSPOTSWIFI		64
+#define MAXLENGHTWIFINAME		64
+#define STORED_CONNECTIONS_SIZE 6
 
-char spotSSID[MAXCANTSPOTSWIFI][MAXLENGHTWIFINAME];
+char spotSSID[40][MAXLENGHTWIFINAME];
 
 char storePassword[MAXLENGHTWIFINAME];
 char storeSSID[MAXLENGHTWIFINAME];
@@ -23,13 +24,14 @@ char storeSSID[MAXLENGHTWIFINAME];
 struct Connection {
 	char ssid[MAXLENGHTWIFINAME];
 	char password[MAXLENGHTWIFINAME];
-	char IP[15];
-	char status;
-	char mode;
+	int status;
 } typedef Connection;
 
 xSemaphoreHandle xSemaphoreWifiATCommand, xSemaphoreWifiRefresh;
 Connection connection;
+Connection storedConnections[STORED_CONNECTIONS_SIZE];
+
+int storeConnectionsSize;
 
 void initGateway();
 void setSSID(char *ssid);
@@ -46,3 +48,6 @@ void readBuffer();
 void sendInfo(char *data);
 int SSIDStoredVisible();
 void disconectFromSpot();
+
+#define TEST_CONNECTIONS 1
+void testStoredConnections();

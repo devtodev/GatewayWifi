@@ -18,6 +18,9 @@ unsigned int strLen(char *value);
 int strsub(char *text, int init, int end, char *rta);
 void setLCD(char *data);
 
+void Num16sToStr(char *dst, int dstSize, int val);
+
+
 static LDD_TDeviceData *MySegLCDPtr;
 
 
