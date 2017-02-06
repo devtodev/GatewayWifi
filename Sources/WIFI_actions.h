@@ -18,12 +18,9 @@
 
 char spotSSID[40][MAXLENGHTWIFINAME];
 
-char storePassword[MAXLENGHTWIFINAME];
-char storeSSID[MAXLENGHTWIFINAME];
-
 struct Connection {
 	char ssid[MAXLENGHTWIFINAME];
-	char password[MAXLENGHTWIFINAME];
+	char password[30];
 	int status;
 } typedef Connection;
 
@@ -40,6 +37,7 @@ void setPassword(char *password);
 void enterWifiMode();
 void connectionMode();
 void getIP();
+void refreshWifiSpots();
 void connectingToServer();
 char getStatus();
 char *getWifiBuffer();
@@ -49,5 +47,5 @@ void sendInfo(char *data);
 int SSIDStoredVisible();
 void disconectFromSpot();
 
-#define TEST_CONNECTIONS 1
+#define TEST_CONNECTIONS 0
 void testStoredConnections();

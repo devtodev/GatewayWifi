@@ -46,32 +46,32 @@ static portTASK_FUNCTION(GatewayTask, pvParameters) {
 static portTASK_FUNCTION(HMITask, pvParameters) {
   char menuConectado[MENUMAXLENGHT][64] = {"Desconectar"};
   char opcionHIM[30];
-  int i = 0;
+  int intentsConnects = 0, temp = 0;
   /* Write your task initialization code here ... */
   BT_init();
   MySegLCDPtr = SegLCD1_Init(NULL);
+  setLCD("9991");
+  SymbolON(11,0);
 
   for(;;) {
-	  setLCD("9991");
-	  SymbolON(11,0);
+	  BT_sendSaltoLinea();BT_sendSaltoLinea();BT_sendSaltoLinea();BT_sendSaltoLinea();
 	  BT_showString("Agro Robots WiFi Spot");
 	  xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 	  switch (connection.status)
 	  {
 	  	  case WIFI_DISCONNECTED:
 		    // necesito obtener los spots
-	  		BT_sendSaltoLinea();BT_sendSaltoLinea();BT_sendSaltoLinea();BT_sendSaltoLinea();
-	  		BT_showString("Agro Robots WiFi Spot");
 	  		BT_sendSaltoLinea();BT_sendSaltoLinea();
 	  		FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
 	  		refreshWifiSpots();
 	  		xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
-	  		if ((SSIDStoredVisible()) && (i < 2))
+	  		temp = SSIDStoredVisible();
+	  		if ((temp >= 0) && (intentsConnects < 2))
 	  		{
-	  			strcpy(connection.ssid, storeSSID);
-	  			strcpy(connection.password, storePassword);
+	  			strcpy(connection.ssid, storedConnections[temp].ssid);
+	  			strcpy(connection.password, storedConnections[temp].password);
 	  			tryToConnect();
-	  			i++;
+	  			intentsConnects++;
 	  		} else {
 				// mostrar los SSIDs
 				if (BT_showMenu(&spotSSID, &connection.ssid[0]) != -69)
@@ -94,15 +94,17 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 					tryToConnect();
 				} else {
 					xSemaphoreGive(xSemaphoreWifiRefresh);
-					for (i = 0; i < 100; i++) BT_sendSaltoLinea();
+					for (int i = 0; i < 100; i++) BT_sendSaltoLinea();
 				}
 	  		}
 		  break;
 	  	  case WIFI_CONNECTING:
+	  		intentsConnects = 0;
 	  		FRTOS1_vTaskDelay(2000/portTICK_RATE_MS);
 	  		connectionMode();
-	  		/*FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
-			getIP();*/
+	  		xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
+	  		FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
+			getIP();
 			xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 			FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
 			connectingToServer();
@@ -115,7 +117,7 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 				break;
 				case -69:
 					xSemaphoreGive(xSemaphoreWifiRefresh);
-					for (i = 0; i < 100; i++) BT_sendSaltoLinea();
+					for (int i = 0; i < 100; i++) BT_sendSaltoLinea();
 				break;
 	  		}
 		  break;
@@ -126,7 +128,9 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 }
 
 void CreateTasks(void) {
+#if TEST_CONNECTIONS
   testStoredConnections();
+#endif
   if (FRTOS1_xTaskCreate(
      GatewayTask,  /* pointer to the task */
       "Gateway", /* task name for kernel awareness debugging */

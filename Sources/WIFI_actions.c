@@ -8,7 +8,7 @@
 
 // esptool.py --port /dev/ttyUSB0 write_flash 0x00000 'AiThinker_ESP8266_DIO_8M_8M_20160615_V1.5.4.bin'
 
-#define DEBUG 1
+#define DEBUG 0
 
 #include "WIFI_actions.h"
 #include "ESP8266.h"
@@ -24,6 +24,8 @@
 
 void sendATCommand(char *ATCommand);
 void sendPartialATCommand(char *ATCommand);
+void setStoredConnections(Connection *connection);
+void getStoredConnections();
 
 #define MAXWIFIINPUTLEGHT 1024
 
@@ -106,18 +108,21 @@ void enterWifiMode()
 
 void connectionMode()
 {
-	sendATCommand("AT+CIPMUX=0\0");
+	sendATCommand("AT+CIPMUX=1\0");
 }
 
 
 void getIP()
 {
-	sendATCommand("AT+CIFSR\0");
+//	sendATCommand("AT+CIFSR\0");
+	sendATCommand("AT+CIPSTA=\"192.168.101.108\"\0");
 }
 
 void connectingToServer()
 {
-	sendATCommand("AT+CIPSTART=\"TCP\",\"54.208.231.134\",3000\0");
+//	sendATCommand("AT+CIFSR\0");
+	sendATCommand("AT+CIPSTART=0,\"TCP\",\"54.208.231.134\",3000\0");
+//	sendATCommand("AT+CIPSTART=?\0");
 }
 
 char getStatus()
@@ -167,12 +172,12 @@ void readBuffer()
   if (interpretarBuffer("+RST\0", setMode) == 1) return;
   if (interpretarBuffer("+CWMODE\0", enterMode) == 1) return;
   if (interpretarBuffer("+CWLAP\0", spotsParse) == 1) return;
-  if (interpretarBuffer("+CIFSR\0", evaluarGetIP) == 1) return;
   if (interpretarBuffer("+CWJAP\0", spotsNewConnect) == 1) return;
   if (interpretarBuffer("+CIPMUX\0", evaluarConnectionMode) == 1) return;
   if (interpretarBuffer("+CIPSTART\0", evaluarConeccionConServer) == 1) return;
   if (interpretarBuffer("+CIPSEND\0", verificarEnvioAlServer) == 1) return;
   if (interpretarBuffer("CLOSED\0", resetModule) == 1) return;
+  if (interpretarBuffer("+CIPSTA\0", evaluarGetIP) == 1) return;
   // ROBOT COMMANDS
   if (interpretarBuffer("+IPD\0", analizarEnvioDelServer) == 1) return;
 }
@@ -207,7 +212,9 @@ void evaluarConeccionConServer()
 	{
 		BT_sendSaltoLinea();
 		BT_showString("Error al conectar al server\0");
-		connectionMode();
+		//connectionMode();
+		connection.status = WIFI_DISCONNECTED;
+		xSemaphoreGive(xSemaphoreWifiRefresh);
 		return;
 	}
 	// conecto correctamente
@@ -262,7 +269,7 @@ void resetModule()
 void setMode()
 {
 	FRTOS1_vTaskDelay(2000/portTICK_RATE_MS);
-	sendATCommand("AT+CWMODE=1\0");
+	sendATCommand("AT+CWMODE=3\0");
 }
 
 void spotsParse()
@@ -299,11 +306,10 @@ void spotsNewConnect()
 		xSemaphoreGive(xSemaphoreWifiRefresh);
 		return;
 	}
-	// conecto correctamente
-	// TODO: en status se persiste la cantidad de conexiones
-	// 		 se inicializa en 0 y se agregar 1 en cada conexión
+	// cambia el status dde la conexion
 	connection.status = WIFI_CONNECTING;
-	setStoredConnections();
+	//
+	setStoredConnections(&connection);
 
 	xSemaphoreGive(xSemaphoreWifiRefresh);
 }
@@ -312,17 +318,20 @@ int SSIDStoredVisible()
 {
 	char opcion[MENUMAXLENGHT];
 	int i = 0;
-	if ((storeSSID == NULL) || (storeSSID[0] == '\0'))
-		return FALSE;
-	while (spotSSID[i] != '\0')
+
+	for (int j = 0; j < storeConnectionsSize; j++)
 	{
-		i++;
-		//el SSID almacenado en memoria esta visible
-		if (strcmp(storeSSID, spotSSID[i]))
-			return TRUE;
+		i = 0;
+		while ((spotSSID != NULL)&&(spotSSID[i] != '\0'))
+		{
+			//el SSID almacenado en memoria esta visible
+			if (strcmp(storedConnections[j].ssid, spotSSID[i]) == 0)
+				return j;
+			i++;
+		}
 	}
 	//no se visualiza el SSID
-	return FALSE;
+	return -1;
 }
 
 void disconectFromSpot()
@@ -331,7 +340,7 @@ void disconectFromSpot()
 	resetModule();
 }
 
-void populateStoredConections(Connection *connections)
+void populateStoredConections()
 {
 	char SSIDPassword[MAXLENGHTWIFINAME*2+20];
 	char temp[15];
@@ -339,12 +348,12 @@ void populateStoredConections(Connection *connections)
 	{
 		// almacena el SSID & Password
 		strcpy(SSIDPassword, "|\0");
-		strcat(SSIDPassword, connections[i].ssid);
+		strcat(SSIDPassword, storedConnections[i].ssid);
 		strcat(SSIDPassword, "|\0");
-		strcat(SSIDPassword, connections[i].password);
+		strcat(SSIDPassword, storedConnections[i].password);
 		strcat(SSIDPassword, "|\0");
-		Num16sToStr(&temp, 15, connections[i].status);
-		strcat(SSIDPassword, &temp);
+		Num16sToStr(&temp[0], 15, storedConnections[i].status);
+		strcat(SSIDPassword, &temp[0]);
 		strcat(SSIDPassword, "|\0");
 		(void)NVMC_SaveSSID_PASSData(&SSIDPassword, i);
 	}
@@ -357,10 +366,10 @@ void setStoredConnections(Connection *connection)
 	int cursor = -1;
 	while ((i < storeConnectionsSize) && (cursor == -1))
 	{
-		if (strcmp(connection->ssid, storedConnections[i].ssid))
+		if (strcmp(connection->ssid, storedConnections[i].ssid) == 0)
 		{
 			// 	si existe verificar si la password no cambio
-			if (strcmp(connection->password, storedConnections[i].password))
+			if (strcmp(connection->password, storedConnections[i].password) == 0)
 			{
 				return;
 			} else {
@@ -381,7 +390,7 @@ void setStoredConnections(Connection *connection)
 
 	storedConnections[cursor].status++;
 #if !TEST_CONNECTIONS
-	populateStoredConections(Connection *connections);
+	populateStoredConections(connection);
 #endif
 }
 
@@ -406,20 +415,22 @@ void getStoredConnections()
 	char *data;
 	int position[10];
 	int i = 0;
+	char temp[15];
 	storeConnectionsSize = i;
 	while (i < STORED_CONNECTIONS_SIZE)
 	{
 		data = (char *) NVMC_GetSSID_PASSData(i);
 		if (data[0] == '|')
 		{
-			storeConnectionsSize = i;
+			storeConnectionsSize++;
 			if (find(data, "|\0", (int *) &position) > 0)
 			{
 				strsub(data, 0+1, position[1]-1, storedConnections[i].ssid);
 				strsub(data, position[1]+1, position[2]-1, storedConnections[i].password);
-				strsub(data, position[3]+1, position[4]-1, storedConnections[i].status);
-			} else return 0;
-		} else return 0;
+				Num16sToStr(&temp[0], 15, storedConnections[i].status);
+				strsub(data, position[3]+1, position[4]-1, temp);
+			} else return;
+		} else return;
 		i++;
 	}
 }

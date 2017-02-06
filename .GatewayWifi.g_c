@@ -516,7 +516,7 @@
     </GenFiles>
     <SignalListFile>Documentation\GatewayWifi_SIGNALS.txt</SignalListFile>
     <DestinationCompiler>GNUC</DestinationCompiler>
-    <ProjectModificationStamp>20</ProjectModificationStamp>
+    <ProjectModificationStamp>22</ProjectModificationStamp>
   </Options>
   <CpuID_75>
     <Generated>true</Generated>

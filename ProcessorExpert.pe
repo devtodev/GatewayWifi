@@ -3,7 +3,7 @@
   <Header>
     <Name>GatewayWifi</Name>
     <SavedBy>Karl</SavedBy>
-    <ModificationStamp>20</ModificationStamp>
+    <ModificationStamp>22</ModificationStamp>
     <Date>2016-03-24</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -4097,7 +4097,7 @@
         <ItemState>
           <ItemSymbol>C_RomRamList</ItemSymbol>
           <ReadOnly>false</ReadOnly>
-          <ListItemCount>4</ListItemCount>
+          <ListItemCount>5</ListItemCount>
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Expanded>true</Expanded>
         </ItemState>
@@ -4264,7 +4264,7 @@
           <ItemSymbol>C_RomRamSize2</ItemSymbol>
           <ReadOnly>false</ReadOnly>
           <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-          <Value>261104</Value>
+          <Value>228336</Value>
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
           <Base>HEX</Base>
         </ItemState>
@@ -4328,6 +4328,64 @@
         </ItemState>
         <ItemState>
           <ItemSymbol>C_RomRamGroupContent3</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <Value>(string list)</Value>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <StrgList lines_count="0" />
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_MemoryArea4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <Expanded>true</Expanded>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamArea4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <Value>true</Value>
+          <Expanded>true</Expanded>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamName4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <Value>NVM_Config</Value>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamQualifier4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <Index>0</Index>
+          <EnumSymbVal>RWX</EnumSymbVal>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamPhysicalType4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <Value />
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamAddr4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+          <Value>229376</Value>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <Base>HEX</Base>
+          <Area />
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamSize4</ItemSymbol>
+          <ReadOnly>false</ReadOnly>
+          <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
+          <Value>32768</Value>
+          <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
+          <Base>HEX</Base>
+        </ItemState>
+        <ItemState>
+          <ItemSymbol>C_RomRamGroupContent4</ItemSymbol>
           <ReadOnly>false</ReadOnly>
           <Value>(string list)</Value>
           <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
