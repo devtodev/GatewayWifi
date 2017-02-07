@@ -12,11 +12,11 @@
 #define WIFI_DISCONNECTED		2
 #define WIFI_CONNECTING			3
 #define WIFI_ATMODE				4
-#define MAXCANTSPOTSWIFI		64
+#define MAXCANTSPOTSWIFI		40
 #define MAXLENGHTWIFINAME		64
 #define STORED_CONNECTIONS_SIZE 6
 
-char spotSSID[40][MAXLENGHTWIFINAME];
+char spotSSID[MAXCANTSPOTSWIFI][MAXLENGHTWIFINAME];
 
 struct Connection {
 	char ssid[MAXLENGHTWIFINAME];
@@ -36,7 +36,7 @@ void connectToAgroRobots();
 void setPassword(char *password);
 void enterWifiMode();
 void connectionMode();
-void getIP();
+void setDHCP();
 void refreshWifiSpots();
 void connectingToServer();
 char getStatus();

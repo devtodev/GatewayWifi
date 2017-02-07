@@ -8,8 +8,6 @@
 
 // esptool.py --port /dev/ttyUSB0 write_flash 0x00000 'AiThinker_ESP8266_DIO_8M_8M_20160615_V1.5.4.bin'
 
-#define DEBUG 0
-
 #include "WIFI_actions.h"
 #include "ESP8266.h"
 #include "string.h"
@@ -112,7 +110,7 @@ void connectionMode()
 }
 
 
-void getIP()
+void setDHCP()
 {
 //	sendATCommand("AT+CIFSR\0");
 	sendATCommand("AT+CWDHCP=1,1\0");
@@ -120,9 +118,7 @@ void getIP()
 
 void connectingToServer()
 {
-//	sendATCommand("AT+CIFSR\0");
 	sendATCommand("AT+CIPSTART=0,\"TCP\",\"54.208.231.134\",3000\0");
-//	sendATCommand("AT+CIPSTART=?\0");
 }
 
 char getStatus()
@@ -161,7 +157,7 @@ void setMode();
 void spotsParse();
 void spotsNewConnect();
 void evaluarConnectionMode();
-void evaluarGetIP();
+void evaluarDHCP();
 void evaluarConeccionConServer();
 void verificarEnvioAlServer();
 void analizarEnvioDelServer();
@@ -177,7 +173,7 @@ void readBuffer()
   if (interpretarBuffer("+CIPSTART\0", evaluarConeccionConServer) == 1) return;
   if (interpretarBuffer("+CIPSEND\0", verificarEnvioAlServer) == 1) return;
   if (interpretarBuffer("CLOSED\0", resetModule) == 1) return;
-  if (interpretarBuffer("+CWDHCP\0", evaluarGetIP) == 1) return;
+  if (interpretarBuffer("+CWDHCP\0", evaluarDHCP) == 1) return;
   // ROBOT COMMANDS
   if (interpretarBuffer("+IPD\0", analizarEnvioDelServer) == 1) return;
 }
@@ -239,7 +235,7 @@ void evaluarConnectionMode()
 	xSemaphoreGive(xSemaphoreWifiRefresh);
 }
 
-void evaluarGetIP()
+void evaluarDHCP()
 {
 	int position[10];
 	int error = find(wifiInputBuffer, "ERROR\0", (int *) &position);

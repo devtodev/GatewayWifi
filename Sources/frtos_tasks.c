@@ -73,13 +73,25 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 	  			tryToConnect();
 	  			intentsConnects++;
 	  		} else {
+	  			temp = 0;
+	  			while ((temp < MAXCANTSPOTSWIFI) && (spotSSID[temp][0] != '\0'))
+	  			{
+	  				temp++;
+	  			}
+	  			if ((temp > 0) && (strcmp("{Ingreso manual}\0", spotSSID[temp-1])!=0))
+	  				strcpy(spotSSID[temp], "{Ingreso manual}\0");
 				// mostrar los SSIDs
 				if (BT_showMenu(&spotSSID, &connection.ssid[0]) != -69)
 				{
 					// setPassword
 					BT_sendSaltoLinea();
-					BT_showString("Seleccion: ");
-					BT_showString(&connection.ssid[0]);
+					if (strcmp("{Ingreso manual}\0", &connection.ssid[0])!=0)
+					{
+						BT_showString("Seleccion: ");
+						BT_showString(&connection.ssid[0]);
+					} else {
+						BT_askValue("SSID: ", &connection.ssid[0]);
+					}
 					BT_sendSaltoLinea();
 					BT_askValue("Password: ", &connection.password[0]);
 					// showDetails
@@ -104,7 +116,7 @@ static portTASK_FUNCTION(HMITask, pvParameters) {
 	  		connectionMode();
 	  		xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 	  		FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
-			getIP();
+			setDHCP();
 			xSemaphoreTake(xSemaphoreWifiRefresh, portMAX_DELAY);
 			FRTOS1_vTaskDelay(1000/portTICK_RATE_MS);
 			connectingToServer();
