@@ -115,7 +115,7 @@ void connectionMode()
 void getIP()
 {
 //	sendATCommand("AT+CIFSR\0");
-	sendATCommand("AT+CIPSTA=\"192.168.101.108\"\0");
+	sendATCommand("AT+CWDHCP=1,1\0");
 }
 
 void connectingToServer()
@@ -177,7 +177,7 @@ void readBuffer()
   if (interpretarBuffer("+CIPSTART\0", evaluarConeccionConServer) == 1) return;
   if (interpretarBuffer("+CIPSEND\0", verificarEnvioAlServer) == 1) return;
   if (interpretarBuffer("CLOSED\0", resetModule) == 1) return;
-  if (interpretarBuffer("+CIPSTA\0", evaluarGetIP) == 1) return;
+  if (interpretarBuffer("+CWDHCP\0", evaluarGetIP) == 1) return;
   // ROBOT COMMANDS
   if (interpretarBuffer("+IPD\0", analizarEnvioDelServer) == 1) return;
 }
