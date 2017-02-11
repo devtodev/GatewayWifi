@@ -13,7 +13,7 @@
 
 #include "TimeDate.h"
 
-int find(char *text, char *word, int *rtas);
+int find(char *text, char *word, int *rtas, int maxsearch);
 unsigned int strLen(char *value);
 int strsub(char *text, int init, int end, char *rta);
 void setLCD(char *data);
